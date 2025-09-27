@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MODULO3_DATA } from './data';
 
 @Component({
   selector: 'app-module-3',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './module-3.component.css'
 })
 export class Module3Component {
-
+  data = MODULO3_DATA;
 }

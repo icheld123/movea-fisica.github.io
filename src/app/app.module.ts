@@ -10,6 +10,7 @@ import { Module4Component } from './feature/modules/module-4/module-4.component'
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { InicioComponent } from './feature/home/inicio/inicio.component';
 import { SharedModule } from './shared/shared.module';
+import { SidebarComponent } from './core/components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SharedModule } from './shared/shared.module';
     Module4Component,
     NavbarComponent,
     InicioComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,

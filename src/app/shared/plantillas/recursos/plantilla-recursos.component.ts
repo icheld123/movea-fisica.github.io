@@ -8,4 +8,5 @@ import { Component, Input } from '@angular/core';
 export class RecursosComponent {
   @Input() titulo: string = '';
   @Input() descripcion: string = '';
+  @Input() imagen: string = '';
 }

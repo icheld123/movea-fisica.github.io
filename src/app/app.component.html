@@ -1,2 +1,15 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<div class="grid grid-cols-1 lg:grid-cols-[16rem_1fr]">
+  <aside class="hidden lg:block">
+    <app-sidebar></app-sidebar>
+  </aside>
+
+  <div class="flex flex-col">
+    <header>
+      <app-navbar></app-navbar>
+    </header>
+
+    <main class="p-6 flex-1">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
