@@ -5,10 +5,13 @@ import { Module1Component } from './feature/modules/module-1/module-1.component'
 import { Module2Component } from './feature/modules/module-2/module-2.component';
 import { Module3Component } from './feature/modules/module-3/module-3.component';
 import { Module4Component } from './feature/modules/module-4/module-4.component';
-import { RecursosComponent } from './shared/plantillas/recursos/plantilla-recursos.component';
-import { AprendizajeComponent } from './shared/plantillas/aprendizaje/plantilla-aprendizaje.component';
-import { PracticaComponent } from './shared/plantillas/practica/plantilla-practica.component';
-import { PruebaComponent } from './shared/plantillas/prueba/plantilla-prueba.component';
+import { ObservarFenomenoComponent } from './shared/plantillas/observar-fenomeno/observar-fenomeno.component'; 
+import { ExplicarObservadoComponent } from './shared/plantillas/explicar-observado/explicar-observado.component';
+import { EntenderFenonemoComponent } from './shared/plantillas/entender-fenonemo/entender-fenonemo.component';
+import { HoraExplorarComponent } from './shared/plantillas/hora-explorar/hora-explorar.component';
+import { PruebaConocimientosComponent } from './shared/plantillas/prueba-conocimientos/prueba-conocimientos.component';
+import { EncuestaSatisfaccionComponent } from './shared/plantillas/encuesta-satisfaccion/encuesta-satisfaccion.component';
+import { PresentacionModuloComponent } from './shared/plantillas/presentacion-modulo/presentacion-modulo.component';
 
 
 const routes: Routes = [
@@ -19,10 +22,13 @@ const routes: Routes = [
     path: 'modulo-1',
     component: Module1Component,
     children: [
-      { path: 'recursos', component: RecursosComponent },
-      { path: 'aprendizaje', component: AprendizajeComponent },
-      { path: 'practica', component: PracticaComponent },
-      { path: 'prueba', component: PruebaComponent },
+      { path: 'presentacion-modulo', component: PresentacionModuloComponent },
+      { path: 'observar-fenomeno', component: ObservarFenomenoComponent },
+      { path: 'explicar-observado', component: ExplicarObservadoComponent },
+      { path: 'entender-fenomeno', component: EntenderFenonemoComponent },
+      { path: 'hora-explorar', component: HoraExplorarComponent },
+      { path: 'prueba-conocimiento', component: PruebaConocimientosComponent },
+      { path: 'encuesta-satisfaccion', component: EncuestaSatisfaccionComponent },
       { path: '', redirectTo: 'recursos', pathMatch: 'full' }
     ]
   },
@@ -31,10 +37,13 @@ const routes: Routes = [
     path: 'modulo-2',
     component: Module2Component,
     children: [
-      { path: 'recursos', component: RecursosComponent },
-      { path: 'aprendizaje', component: AprendizajeComponent },
-      { path: 'practica', component: PracticaComponent },
-      { path: 'prueba', component: PruebaComponent },
+      { path: 'presentacion-modulo', component: PresentacionModuloComponent },
+      { path: 'observar-fenomeno', component: ObservarFenomenoComponent },
+      { path: 'explicar-observado', component: ExplicarObservadoComponent },
+      { path: 'entender-fenomeno', component: EntenderFenonemoComponent },
+      { path: 'hora-explorar', component: HoraExplorarComponent },
+      { path: 'prueba-conocimiento', component: PruebaConocimientosComponent },
+      { path: 'encuesta-satisfaccion', component: EncuestaSatisfaccionComponent },
       { path: '', redirectTo: 'recursos', pathMatch: 'full' }
 
     ]
@@ -44,10 +53,13 @@ const routes: Routes = [
     path: 'modulo-3',
     component: Module3Component,
     children: [
-      { path: 'recursos', component: RecursosComponent },
-      { path: 'aprendizaje', component: AprendizajeComponent },
-      { path: 'practica', component: PracticaComponent },
-      { path: 'prueba', component: PruebaComponent },
+      { path: 'presentacion-modulo', component: PresentacionModuloComponent },
+      { path: 'observar-fenomeno', component: ObservarFenomenoComponent },
+      { path: 'explicar-observado', component: ExplicarObservadoComponent },
+      { path: 'entender-fenomeno', component: EntenderFenonemoComponent },
+      { path: 'hora-explorar', component: HoraExplorarComponent },
+      { path: 'prueba-conocimiento', component: PruebaConocimientosComponent },
+      { path: 'encuesta-satisfaccion', component: EncuestaSatisfaccionComponent },
       { path: '', redirectTo: 'recursos', pathMatch: 'full' }
     ]
   },
@@ -56,10 +68,13 @@ const routes: Routes = [
     path: 'modulo-4',
     component: Module4Component,
     children: [
-      { path: 'recursos', component: RecursosComponent },
-      { path: 'aprendizaje', component: AprendizajeComponent },
-      { path: 'practica', component: PracticaComponent },
-      { path: 'prueba', component: PruebaComponent },
+      { path: 'presentacion-modulo', component: PresentacionModuloComponent },
+      { path: 'observar-fenomeno', component: ObservarFenomenoComponent },
+      { path: 'explicar-observado', component: ExplicarObservadoComponent },
+      { path: 'entender-fenomeno', component: EntenderFenonemoComponent },
+      { path: 'hora-explorar', component: HoraExplorarComponent },
+      { path: 'prueba-conocimiento', component: PruebaConocimientosComponent },
+      { path: 'encuesta-satisfaccion', component: EncuestaSatisfaccionComponent },
       { path: '', redirectTo: 'recursos', pathMatch: 'full' }
     ]
   },

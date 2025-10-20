@@ -1,25 +1,35 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AprendizajeComponent as PlantillaAprendizajeComponent } from './plantillas/aprendizaje/plantilla-aprendizaje.component';
-import { PracticaComponent as PlantillaPracticaComponent } from './plantillas/practica/plantilla-practica.component';
-import { PruebaComponent as PlantillaPruebaComponent } from './plantillas/prueba/plantilla-prueba.component';
-import { RecursosComponent as PlantillaRecursosComponent } from './plantillas/recursos/plantilla-recursos.component';
+import { ObservarFenomenoComponent } from './plantillas/observar-fenomeno/observar-fenomeno.component';
+import { ExplicarObservadoComponent } from './plantillas/explicar-observado/explicar-observado.component';
+import { EntenderFenonemoComponent } from './plantillas/entender-fenonemo/entender-fenonemo.component';
+import { HoraExplorarComponent } from './plantillas/hora-explorar/hora-explorar.component';
+import { PruebaConocimientosComponent } from './plantillas/prueba-conocimientos/prueba-conocimientos.component';
+import { EncuestaSatisfaccionComponent } from './plantillas/encuesta-satisfaccion/encuesta-satisfaccion.component';
+import { PresentacionModuloComponent } from './plantillas/presentacion-modulo/presentacion-modulo.component';
 
 @NgModule({
 	declarations: [
-		PlantillaAprendizajeComponent,
-		PlantillaPracticaComponent,
-		PlantillaPruebaComponent,
-		PlantillaRecursosComponent
+
+		ObservarFenomenoComponent,
+		ExplicarObservadoComponent,
+		EntenderFenonemoComponent,
+		HoraExplorarComponent,
+		PruebaConocimientosComponent,
+		EncuestaSatisfaccionComponent,
+  		PresentacionModuloComponent
 	],
 	imports: [
 		CommonModule
 	],
 	exports: [
-		PlantillaAprendizajeComponent,
-		PlantillaPracticaComponent,
-		PlantillaPruebaComponent,
-		PlantillaRecursosComponent
+		ObservarFenomenoComponent,
+		ExplicarObservadoComponent,
+		EntenderFenonemoComponent,
+		HoraExplorarComponent,
+		PruebaConocimientosComponent,
+		EncuestaSatisfaccionComponent,
+		PresentacionModuloComponent
 	]
 })
 export class SharedModule {}

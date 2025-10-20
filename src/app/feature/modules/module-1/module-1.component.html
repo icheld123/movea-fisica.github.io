@@ -1,26 +1,9 @@
-<h1 class="text-2xl font-bold mb-4">Módulo 1</h1>
-<!-- modulo1.component.html -->
-<app-recursos-plantilla
-  [titulo]="data.recursos.titulo"
-  [descripcion]="data.recursos.descripcion"
-  [imagen]="data.recursos.imagen">
-</app-recursos-plantilla>
+<div class="module-1-root">
+	<app-presentacion-modulo *ngIf="showPresentacion && presentacion"
+		[titulo]="presentacion.titulo"
+		[descripcion]="presentacion.descripcion">
+	</app-presentacion-modulo>
+<!-- 
+	<router-outlet></router-outlet> -->
+</div>
 
-<app-aprendizaje-plantilla
-  [titulo]="data.aprendizaje.titulo"
-  [descripcion]="data.aprendizaje.descripcion">
-</app-aprendizaje-plantilla>
-
-<app-practica-plantilla
-  [titulo]="data.practica.titulo"
-  [descripcion]="data.practica.descripcion">
-</app-practica-plantilla>
-
-<app-prueba-plantilla
-  [titulo]="data.pruebaFinal.titulo"
-  [descripcion]="data.pruebaFinal.descripcion">
-</app-prueba-plantilla>
-
-
-
-<!-- <app-recursos-plantilla [titulo]="titulo" [descripcion]="descripcion"></app-recursos-plantilla> -->
