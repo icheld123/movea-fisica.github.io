@@ -7,6 +7,8 @@ import { HoraExplorarComponent } from './plantillas/hora-explorar/hora-explorar.
 import { PruebaConocimientosComponent } from './plantillas/prueba-conocimientos/prueba-conocimientos.component';
 import { EncuestaSatisfaccionComponent } from './plantillas/encuesta-satisfaccion/encuesta-satisfaccion.component';
 import { PresentacionModuloComponent } from './plantillas/presentacion-modulo/presentacion-modulo.component';
+import { AppRoutingModule } from "../app-routing.module";
+import { ModalComponent } from '../feature/shared/plantillas/modal/modal.component';
 
 @NgModule({
 	declarations: [
@@ -18,10 +20,12 @@ import { PresentacionModuloComponent } from './plantillas/presentacion-modulo/pr
 		PruebaConocimientosComponent,
 		EncuestaSatisfaccionComponent,
   		PresentacionModuloComponent
+		,ModalComponent
 	],
 	imports: [
-		CommonModule
-	],
+    CommonModule,
+    AppRoutingModule
+],
 	exports: [
 		ObservarFenomenoComponent,
 		ExplicarObservadoComponent,
@@ -29,7 +33,8 @@ import { PresentacionModuloComponent } from './plantillas/presentacion-modulo/pr
 		HoraExplorarComponent,
 		PruebaConocimientosComponent,
 		EncuestaSatisfaccionComponent,
-		PresentacionModuloComponent
+		PresentacionModuloComponent,
+		ModalComponent
 	]
 })
 export class SharedModule {}
