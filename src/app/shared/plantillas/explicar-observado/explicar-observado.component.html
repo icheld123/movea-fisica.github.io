@@ -1,1 +1,48 @@
-<p>explicar-observado works!</p>
+<div class="flex flex-col items-center justify-center min-h-screen text-white p-4">
+  <div *ngIf="data" class="max-w-4xl w-full bg-black/40 rounded-lg p-8 backdrop-blur-sm">
+    <h1 class="text-4xl font-bold mb-6">{{ data.titulo }}</h1>
+    <p class="text-lg mb-8">{{ data.descripcion }}</p>
+
+    <ng-container *ngIf="layoutType === 'grid'">
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div *ngIf="data.imagen" class="relative">
+          <img [src]="data.imagen" [alt]="data.titulo" class="w-full rounded-lg shadow-lg">
+          <p *ngIf="data.creditos" class="text-xs text-gray-400 mt-2">{{ data.creditos }}</p>
+        </div>
+
+        <div class="space-y-6">
+          <div *ngFor="let item of data.contenido" class="bg-white/10 rounded-lg p-4">
+            <h3 class="text-xl font-semibold text-blue-300 mb-2">{{ item.nombre }}</h3>
+            <p class="text-gray-200">{{ item.descripcion }}</p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="layoutType === 'lista'">
+      <div class="space-y-6">
+        <div *ngFor="let item of data.contenido" class="bg-white/10 rounded-lg p-4">
+          <h3 class="text-xl font-semibold text-blue-300 mb-2">{{ item.nombre }}</h3>
+          <p class="text-gray-200">{{ item.descripcion }}</p>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="layoutType === 'tabs'">
+    </ng-container>
+
+    <ng-container *ngIf="layoutType === 'simple'">
+      <div class="prose prose-invert max-w-none">
+        <div [innerHTML]="data.contenido"></div>
+      </div>
+    </ng-container>
+
+    <div *ngIf="data.textoBoton" class="flex justify-center mt-8">
+      <button (click)="onButtonClick()"
+        class="group relative inline-flex items-center px-8 py-3 text-lg font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200">
+        {{ data.textoBoton }}
+        <span class="ml-2 transform group-hover:translate-x-1 transition-transform duration-200">→</span>
+      </button>
+    </div>
+  </div>
+</div>

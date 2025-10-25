@@ -1,5 +1,16 @@
-<div class="plantilla">
-  <h2>{{ titulo }}</h2>
-  <p>{{ descripcion }}</p>
+<div class="plantilla flex flex-col items-center justify-center text-center p-8" [ngStyle]="backgroundStyle">
+  <div class="max-w-2xl mx-auto p-8 bg-black/10 rounded-lg backdrop-blur-sm">
+    <h2 class="text-3xl font-bold mb-4 text-white">{{ titulo }}</h2>
+    <p class="text-lg mb-8 text-gray-200">{{ descripcion }}</p>
+    <div *ngIf="textoBoton" class="absolute right-10 bottom-5">
+      <button (click)="onButtonClick()"
+        class="group inline-flex items-center px-6 py-3 text-base font-medium text-white bg-[#8392e0] border border-transparent rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-transform transform hover:-translate-y-0.5 cursor-pointer">
+        <span class="mr-3">{{ textoBoton }}</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </button>
+    </div>
+  </div>
   <ng-content></ng-content>
 </div>

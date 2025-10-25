@@ -66,6 +66,12 @@ export class SidebarComponent {
 
   constructor(private moduleState: ModuleStateService) {}
 
+  // called when user clicks a fase link so other parts (module components) know
+  selectModule(id: string | null) {
+    this.moduleState.selectModule(id);
+    this.expanded = id;
+  }
+
   toggle(id: string) {
     this.expanded = this.expanded === id ? null : id;
     // notify other parts of the app which module was clicked
