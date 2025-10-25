@@ -1,7 +1,7 @@
-<div class="flex flex-col items-center justify-center min-h-screen text-white p-4">
-  <div *ngIf="data" class="max-w-4xl w-full bg-black/40 rounded-lg p-8 backdrop-blur-sm">
-    <h1 class="text-4xl font-bold mb-6">{{ data.titulo }}</h1>
-    <p class="text-lg mb-8">{{ data.descripcion }}</p>
+<div class="flex flex-col items-center min-h-screen text-black">
+  <div *ngIf="data" class="w-full p-8">
+    <h1 class="text-2xl font-bold mb-6">{{ data.titulo }}</h1>
+    <p class="mb-8">{{ data.descripcion }}</p>
 
     <ng-container *ngIf="layoutType === 'grid'">
       <div class="grid md:grid-cols-2 gap-8 mb-8">
@@ -11,9 +11,9 @@
         </div>
 
         <div class="space-y-6">
-          <div *ngFor="let item of data.contenido" class="bg-white/10 rounded-lg p-4">
-            <h3 class="text-xl font-semibold text-blue-300 mb-2">{{ item.nombre }}</h3>
-            <p class="text-gray-200">{{ item.descripcion }}</p>
+          <div *ngFor="let item of data.contenido" class="bg-white/10 rounded-lg">
+            <h3 class="font-semibold text-blue-300 mb-2">{{ item.nombre }}</h3>
+            <p class="text-black-200">{{ item.descripcion }}</p>
           </div>
         </div>
       </div>
@@ -37,9 +37,9 @@
       </div>
     </ng-container>
 
-    <div *ngIf="data.textoBoton" class="flex justify-center mt-8">
+    <div *ngIf="data.textoBoton" class="absolute right-10 bottom-5">
       <button (click)="onButtonClick()"
-        class="group relative inline-flex items-center px-8 py-3 text-lg font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200">
+        class="group relative inline-flex items-center px-8 py-3 text-lg font-medium text-white bg-[#8392e0] rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200 cursor-pointer">
         {{ data.textoBoton }}
         <span class="ml-2 transform group-hover:translate-x-1 transition-transform duration-200">→</span>
       </button>
