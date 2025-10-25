@@ -21,8 +21,8 @@ export const MODULO1_DATA = {
         descripcion: "En los polos, el aire frío y denso desciende y se desplaza hacia latitudes más bajas."
       }
     ],
-    imagen: "/assets/modulo-1/celulas-hadley.png",
-    textoBoton: "Entender el fenómeno →",
+    imagen: "/assets/modulo-1/celulas-hadley-2.jpg",
+    textoBoton: "Ver la evidencia",
     creditos: "Imagen tomada de: https://4.bp.blogspot.com/_KGhu7uNajfQ/TMGw_HD4mWI/AAAAAAAAARs/Wv8JyFezFDk/s1600/celulas-hadley-2.jpg"
   },
   entenderFenomeno: {
