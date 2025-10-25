@@ -1,27 +1,124 @@
-# ProyectoAvaFisica
+# 🌎 MOVEA - Módulos Virtuales de Enseñanza y Aprendizaje en Física Atmosférica
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.1.
+**MOVEA** es una plataforma educativa interactiva desarrollada con **Angular** que permite explorar y comprender fenómenos físicos asociados a la atmósfera, como los **fluidos**, la **presión**, la **temperatura** y la **circulación global**.
 
-## Development server
+Su objetivo es fortalecer el aprendizaje de la física atmosférica mediante recursos visuales, simulaciones interactivas y evaluaciones autogestionadas, promoviendo el pensamiento científico y crítico.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## 🧠 Proyecto desarrollado por
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Grupo de Investigación en Ambientes Virtuales de Aprendizaje – VIRTUS**  
+**Universidad Distrital Francisco José de Caldas – Bogotá, Colombia**
 
-## Build
+**Desarrolladores:**
+- 👩‍💻 **Ichel Alejandra Delgado Morales** – 20202020029  
+- 👨‍💻 **Edgar Andrés Umaña** – 20181020152  
+- 👨‍💻 **Dilan Guisseppe Triana Jiménez** – 20221020100  
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## 🚀 Tecnologías utilizadas
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+| Herramienta | Versión |
+|--------------|---------|
+| **Angular CLI** | 18.2.21 |
+| **Node.js** | 18.20.8 |
+| **NPM** | 10.8.2 |
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 🧱 Estructura del proyecto
 
-## Further help
+```bash
+src/
+ ├── app/                  # Componentes principales y módulos
+ │    ├── core/            # Servicios, guardias y configuración
+ │    ├── shared/          # Componentes reutilizables
+ │    ├── modules/         # Módulos del MOVEA (ej. Módulo 1 - Fluidos)
+ │    └── app.component.ts # Componente raíz
+ ├── assets/               # Recursos estáticos (imágenes, videos, simuladores)
+ ├── environments/         # Archivos de configuración
+ └── index.html            # Entrada principal
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+
+## ⚙️ Instalación y ejecución
+
+1️⃣ **Clona el repositorio**
+
+```bash
+git clone https://github.com/tuusuario/movea-fisica.git
+cd movea-fisica
+```
+
+2️⃣ **Instala las dependencias**
+
+```bash
+npm install
+```
+
+3️⃣ **Ejecuta el servidor de desarrollo**
+
+```bash
+ng serve
+```
+
+4️⃣ **Abre el navegador**
+
+👉 [http://localhost:4200](http://localhost:4200)
+
+El proyecto se recargará automáticamente cuando realices cambios en los archivos fuente.
+
+---
+
+## 🧩 Scripts útiles
+
+| Comando | Descripción |
+|----------|--------------|
+| `ng serve` | Inicia el servidor de desarrollo |
+| `ng build` | Genera la compilación optimizada para producción |
+| `ng test` | Ejecuta las pruebas unitarias con Karma |
+| `ng lint` | Analiza el código y verifica buenas prácticas |
+| `ng generate component <nombre>` | Crea nuevos componentes Angular |
+
+---
+
+## 🧭 Estructura modular
+
+Cada módulo representa una unidad temática del MOVEA.  
+Ejemplo:
+
+- **Módulo 1:** *Fluidos y circulación global atmosférica*  
+  - HU1: Introducción al fenómeno  
+  - HU2: Concepto de “Tape Recorder”  
+  - HU3: Definición de conceptos físicos  
+  - HU4: Laboratorio virtual (simuladores PhET)  
+  - HU5: Autoevaluación  
+  - HU6: Encuesta de satisfacción  
+
+---
+
+## 💡 Flujo de trabajo (GitFlow)
+
+1. Crear una nueva rama a partir de `develop`:
+   ```bash
+   git checkout develop
+   git pull origin develop
+   git checkout -b feature/modulo-1-hu1
+   ```
+2. Realizar los cambios y commits.
+3. Subir la rama:
+   ```bash
+   git push -u origin feature/modulo-1-hu1
+   ```
+4. Crear un **Merge Request / Pull Request** hacia `develop`.
+
+---
+
+## 📄 Licencia
+
+Este proyecto se distribuye bajo la licencia [MIT](LICENSE).
+
+---
