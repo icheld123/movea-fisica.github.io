@@ -49,7 +49,7 @@ src/
 1️⃣ **Clona el repositorio**
 
 ```bash
-git clone https://github.com/tuusuario/movea-fisica.git
+git clone git@github.com:icheld123/movea-fisica.github.io.git
 cd movea-fisica
 ```
 
