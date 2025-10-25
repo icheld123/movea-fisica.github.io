@@ -10,7 +10,7 @@ import { ModuleStateService } from '../../../core/services/module-state.service'
 })
 export class Module1Component implements OnInit, OnDestroy {
   data = MODULO1_DATA;
-  presentacion: { titulo: string; descripcion: string } | null = null;
+  presentacion: { titulo: string; descripcion: string; textoBoton: string } | null = null;
   showPresentacion = false;
 
   private sub: Subscription | null = null;
@@ -18,14 +18,11 @@ export class Module1Component implements OnInit, OnDestroy {
   constructor(private moduleState: ModuleStateService) {}
 
   ngOnInit() {
-    // choose a sensible default for the presentation (fallback to recursos)
-  // support optional `presentacion` key in data; fall back to `recursos`
-  this.presentacion = (this.data as any).presentacion ?? this.data.recursos ?? null;
+      this.presentacion = (this.data as any).presentacion ?? (this.data as any).recursos ?? null;
 
-    this.sub = this.moduleState.selectedModule$.subscribe(selected => {
-      // the service emits ids like 'modulo-1' or null
-      this.showPresentacion = selected === 'modulo-1';
-    });
+      this.sub = this.moduleState.selectedModule$.subscribe(selected => {
+        this.showPresentacion = selected === 'modulo-1';
+      });
   }
 
   ngOnDestroy() {

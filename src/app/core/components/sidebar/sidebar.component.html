@@ -51,6 +51,7 @@
             <ul *ngIf="expanded === modulo.id" class="pl-5 mt-1 space-y-1 border-l border-gray-200">
               <li *ngFor="let fase of modulo.children">
                 <a [routerLink]="fase.path" routerLinkActive="bg-gray-200 font-medium"
+                  (click)="selectModule(modulo.id)"
                   class="block px-2 py-1 text-sm text-gray-600 rounded hover:bg-gray-100">
                   {{ fase.label }}
                 </a>
