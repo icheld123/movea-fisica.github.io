@@ -21,7 +21,7 @@ export const MODULO1_DATA = {
         descripcion: "En los polos, el aire frío y denso desciende y se desplaza hacia latitudes más bajas."
       }
     ],
-    imagen: "/assets/modulo-1/celulas-hadley-2.jpg",
+    imagen: "assets/modulo-1/celulas-hadley-2.jpg",
     textoBoton: "Ver la evidencia",
     creditos: "Imagen tomada de: https://4.bp.blogspot.com/_KGhu7uNajfQ/TMGw_HD4mWI/AAAAAAAAARs/Wv8JyFezFDk/s1600/celulas-hadley-2.jpg"
   },
@@ -32,21 +32,21 @@ export const MODULO1_DATA = {
       {
         titulo: "Zona Tropical",
         descripcion: "En el trópico, bajo el dominio de la célula de Hadley, observamos la señal canónica del tape recorder. Las bandas diagonales ascendentes muestran cómo el aire, al elevarse, transporta la firma estacional del vapor de agua hacia la estratosfera. Este patrón es la evidencia directa del lento ascenso que define la rama ascendente de la circulación Brewer- Dobson.",
-        imagen: "/assets/modulo-1/zona-tropical-2005-2015.png",
+        imagen: "assets/modulo-1/zona-tropical-2005-2015.png",
         anterior: null,
         siguiente: "latitudes-medias"
       },
       {
         titulo: "Latitudes Medias",
         descripcion: "En las latitudes medias, la señal de ascenso desaparece. La dinámica aquí está dominada por la célula de Ferrel, que se caracteriza por un movimiento de aire superficial hacia los polos y un descenso de aire estratosférico. El gráfico muestra un fuerte ciclo estacional, pero sin la propagación vertical vista en el trópico, indicando una ausencia de ascenso neto a gran escala hacia la estratosfera.",
-        imagen: "/assets/modulo-1/zonas-medias-2004-2015.png",
+        imagen: "assets/modulo-1/zonas-medias-2004-2015.png",
         anterior: "zona-tropical",
         siguiente: "zona-polar"
       },
       {
         titulo: "Zona Polar",
         descripcion: "En las regiones polares, el aire es extremadamente seco, una característica del dominio de la célula Polar. Este es el punto de descenso principal de la circulación Brewer- Dobson. El aire que ha viajado por la estratosfera pierde su humedad y desciende de nuevo a la troposfera, por lo que no se observa ninguna señal de ascenso, sino un fuerte ciclo anual influenciado por el vórtice polar.",
-        imagen: "/assets/modulo-1/zonas-polares-2005-2015.png",
+        imagen: "assets/modulo-1/zonas-polares-2005-2015.png",
         anterior: "latitudes-medias",
         siguiente: null
       }
