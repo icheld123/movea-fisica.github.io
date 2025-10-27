@@ -59,7 +59,7 @@ export class ObservarFenomenoComponent implements OnInit, OnDestroy {
 
     if (this.currentModule === 'modulo-1') {
       this.backgroundStyle = {
-        'background-image': "url('/assets/modulo-1/brewer_dobson_realistic_temp.gif')",
+        'background-image': "url('assets/modulo-1/brewer_dobson_realistic_temp.gif')",
         'background-size': 'cover',
         'background-position': 'center',
         'min-height': '90vh'
