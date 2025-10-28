@@ -1,0 +1,11 @@
+<section class="view-container">
+  <h2>Propiedades de los gases</h2>
+  <div class="experiment-card">
+    <p class="placeholder">[Recurso PhET: Propiedades de los gases — descripción breve aquí]</p>
+    <div class="btn-wrap">
+      <button class="exp-btn" (click)="openModal()">Abrir simulador</button>
+    </div>
+  </div>
+
+  <app-modal-reusable [open]="isModalOpen" [url]="experimentUrl" (closed)="onModalClosed()"></app-modal-reusable>
+</section>

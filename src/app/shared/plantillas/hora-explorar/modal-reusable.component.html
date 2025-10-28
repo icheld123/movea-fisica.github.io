@@ -1,0 +1,14 @@
+<div class="modal-overlay" [class.show]="visible" *ngIf="open">
+  <div class="modal-box" [class.visible]="visible" role="dialog" aria-modal="true">
+    <div class="modal-body">
+      <ng-container *ngIf="url; else noUrl">
+        <iframe [src]="url | safeUrl" frameborder="0" class="modal-iframe"></iframe>
+      </ng-container>
+      <ng-template #noUrl>
+        <div class="no-url">Recurso no especificado.</div>
+      </ng-template>
+    </div>
+
+    <button class="close-btn" (click)="onClose()" aria-label="Cerrar">Cerrar</button>
+  </div>
+</div>

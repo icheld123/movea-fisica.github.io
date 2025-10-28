@@ -1,0 +1,74 @@
+:root{
+	--primary-btn: #7884f2; /* azul-violeta */
+	--btn-text: #ffffff;
+}
+
+.hora-explorar-container{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	padding:3rem 1rem;
+	box-sizing:border-box;
+	min-height:60vh; /* centra verticalmente dentro de la página */
+}
+
+.content{
+	text-align:center;
+	max-width:900px;
+	width:100%;
+}
+
+.title{
+	font-size:2rem;
+	margin:0 0 0.5rem 0;
+	font-weight:700;
+}
+
+.description{
+	font-size:1.05rem;
+	margin:0 0 1.75rem 0;
+	color: #333;
+	line-height:1.5;
+}
+
+.buttons-row{
+	display:flex;
+	gap:1rem;
+	justify-content:center;
+	align-items:center;
+	flex-wrap:wrap; /* responsivo: wrap en pantallas pequeñas */
+}
+
+.pill-btn{
+	display:inline-flex;
+	align-items:center;
+	justify-content:center;
+	padding:0.9rem 1.6rem;
+	border-radius:999px; /* píldora completa */
+	background:var(--primary-btn);
+	color:var(--btn-text);
+	text-decoration:none;
+	font-size:1rem;
+	font-weight:600;
+	box-shadow:0 6px 14px rgba(120,132,242,0.18);
+	transition:transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+	min-width:200px;
+	text-align:center;
+}
+
+.pill-btn:hover{
+	transform:translateY(-4px);
+	box-shadow:0 10px 22px rgba(120,132,242,0.22);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 700px){
+	.title{ font-size:1.5rem; }
+	.description{ font-size:0.98rem; }
+	.pill-btn{ min-width:160px; padding:0.8rem 1.1rem; font-size:0.96rem; }
+}
+
+@media (max-width: 420px){
+	.pill-btn{ width:100%; min-width:0; }
+	.buttons-row{ gap:0.75rem; }
+}

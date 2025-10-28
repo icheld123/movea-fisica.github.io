@@ -1,0 +1,8 @@
+.view-container{
+  padding:2rem 1rem;
+  max-width:900px;
+  margin:0 auto;
+  text-align:center;
+}
+.view-container h2{ margin-bottom:1rem; }
+.placeholder{ color:#666; background:#8392e0; padding:1rem; border-radius:8px; }

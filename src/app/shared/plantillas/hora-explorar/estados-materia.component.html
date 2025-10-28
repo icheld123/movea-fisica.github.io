@@ -1,0 +1,13 @@
+<section class="view-container">
+  <h2>Estados de la materia</h2>
+  <!-- Tarjeta del experimento con botón que abre la modal -->
+  <div class="experiment-card">
+    <p class="placeholder">[Recurso PhET: Estados de la materia — descripción breve aquí]</p>
+    <div class="btn-wrap">
+      <button class="exp-btn" (click)="openModal()">Abrir simulador</button>
+    </div>
+  </div>
+
+  <!-- Modal reusable -->
+  <app-modal-reusable [open]="isModalOpen" [url]="experimentUrl" (closed)="onModalClosed()"></app-modal-reusable>
+</section>

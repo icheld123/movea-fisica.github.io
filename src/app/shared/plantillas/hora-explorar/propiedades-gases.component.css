@@ -1,0 +1,22 @@
+.view-container{
+  padding:2rem 1rem;
+  max-width:900px;
+  margin:0 auto;
+  text-align:center;
+}
+.view-container h2{ margin-bottom:1rem; }
+.placeholder{ color:#666; background:#f7f7fb; padding:1rem; border-radius:8px; }
+
+.experiment-card{ padding:1rem; display:flex; flex-direction:column; align-items:center; gap:1rem; }
+.btn-wrap{ display:flex; justify-content:center; width:100%; }
+.exp-btn{
+  background:#8392e0;
+  color:#000;
+  border:0;
+  padding:0.8rem 1.2rem;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:600;
+  box-shadow:0 6px 12px rgba(0,0,0,0.08);
+}
+.exp-btn:hover{ filter:brightness(1.06); }

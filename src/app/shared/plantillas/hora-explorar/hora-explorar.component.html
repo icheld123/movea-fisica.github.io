@@ -1,1 +1,16 @@
-<p>hora-explorar works!</p>
+<section class="hora-explorar-container">
+	<div class="content">
+		<h1 class="title">¡Hora de explorar!</h1>
+		<p class="description">El movimiento del aire, su temperatura y presión están conectados. Para complementar la teoría, experimenta tú mismo con estos conceptos en los simuladores interactivos de PhET Colorado.</p>
+
+		<div class="buttons-row">
+			<a class="pill-btn" [routerLink]="['./estados-de-la-materia']">Estados de la materia</a>
+			<a class="pill-btn" [routerLink]="['./propiedades-de-los-gases']">Propiedades de los gases</a>
+			<a class="pill-btn" [routerLink]="['./bajo-presion']">Bajo presión</a>
+		</div>
+	</div>
+</section>
+
+<!-- Nota: las rutas están definidas como hijos de la ruta 'hora-explorar'.
+		 En cada vista nueva (estados/propiedades/bajo-presion) deja comentarios
+		 donde insertar los recursos PhET Colorado. -->

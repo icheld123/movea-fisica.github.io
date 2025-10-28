@@ -12,6 +12,9 @@ import { HoraExplorarComponent } from './shared/plantillas/hora-explorar/hora-ex
 import { PruebaConocimientosComponent } from './shared/plantillas/prueba-conocimientos/prueba-conocimientos.component';
 import { EncuestaSatisfaccionComponent } from './shared/plantillas/encuesta-satisfaccion/encuesta-satisfaccion.component';
 import { PresentacionModuloComponent } from './shared/plantillas/presentacion-modulo/presentacion-modulo.component';
+import { EstadosMateriaComponent } from './shared/plantillas/hora-explorar/estados-materia.component';
+import { PropiedadesGasesComponent } from './shared/plantillas/hora-explorar/propiedades-gases.component';
+import { BajoPresionComponent } from './shared/plantillas/hora-explorar/bajo-presion.component';
 
 
 const routes: Routes = [
@@ -26,7 +29,15 @@ const routes: Routes = [
       { path: 'observar-fenomeno', component: ObservarFenomenoComponent },
       { path: 'explicar-observado', component: ExplicarObservadoComponent },
       { path: 'entender-fenomeno', component: EntenderFenonemoComponent },
-      { path: 'hora-explorar', component: HoraExplorarComponent },
+      {
+        path: 'hora-explorar',
+        component: HoraExplorarComponent,
+        children: [
+          { path: 'estados-de-la-materia', component: EstadosMateriaComponent },
+          { path: 'propiedades-de-los-gases', component: PropiedadesGasesComponent },
+          { path: 'bajo-presion', component: BajoPresionComponent }
+        ]
+      },
       { path: 'prueba-conocimiento', component: PruebaConocimientosComponent },
       { path: 'encuesta-satisfaccion', component: EncuestaSatisfaccionComponent },
       { path: '', redirectTo: 'recursos', pathMatch: 'full' }
@@ -41,7 +52,15 @@ const routes: Routes = [
       { path: 'observar-fenomeno', component: ObservarFenomenoComponent },
       { path: 'explicar-observado', component: ExplicarObservadoComponent },
       { path: 'entender-fenomeno', component: EntenderFenonemoComponent },
-      { path: 'hora-explorar', component: HoraExplorarComponent },
+      {
+        path: 'hora-explorar',
+        component: HoraExplorarComponent,
+        children: [
+          { path: 'estados-de-la-materia', component: EstadosMateriaComponent },
+          { path: 'propiedades-de-los-gases', component: PropiedadesGasesComponent },
+          { path: 'bajo-presion', component: BajoPresionComponent }
+        ]
+      },
       { path: 'prueba-conocimiento', component: PruebaConocimientosComponent },
       { path: 'encuesta-satisfaccion', component: EncuestaSatisfaccionComponent },
       { path: '', redirectTo: 'recursos', pathMatch: 'full' }
@@ -57,7 +76,15 @@ const routes: Routes = [
       { path: 'observar-fenomeno', component: ObservarFenomenoComponent },
       { path: 'explicar-observado', component: ExplicarObservadoComponent },
       { path: 'entender-fenomeno', component: EntenderFenonemoComponent },
-      { path: 'hora-explorar', component: HoraExplorarComponent },
+      {
+        path: 'hora-explorar',
+        component: HoraExplorarComponent,
+        children: [
+          { path: 'estados-de-la-materia', component: EstadosMateriaComponent },
+          { path: 'propiedades-de-los-gases', component: PropiedadesGasesComponent },
+          { path: 'bajo-presion', component: BajoPresionComponent }
+        ]
+      },
       { path: 'prueba-conocimiento', component: PruebaConocimientosComponent },
       { path: 'encuesta-satisfaccion', component: EncuestaSatisfaccionComponent },
       { path: '', redirectTo: 'recursos', pathMatch: 'full' }
@@ -72,7 +99,15 @@ const routes: Routes = [
       { path: 'observar-fenomeno', component: ObservarFenomenoComponent },
       { path: 'explicar-observado', component: ExplicarObservadoComponent },
       { path: 'entender-fenomeno', component: EntenderFenonemoComponent },
-      { path: 'hora-explorar', component: HoraExplorarComponent },
+      {
+        path: 'hora-explorar',
+        component: HoraExplorarComponent,
+        children: [
+          { path: 'estados-de-la-materia', component: EstadosMateriaComponent },
+          { path: 'propiedades-de-los-gases', component: PropiedadesGasesComponent },
+          { path: 'bajo-presion', component: BajoPresionComponent }
+        ]
+      },
       { path: 'prueba-conocimiento', component: PruebaConocimientosComponent },
       { path: 'encuesta-satisfaccion', component: EncuestaSatisfaccionComponent },
       { path: '', redirectTo: 'recursos', pathMatch: 'full' }
