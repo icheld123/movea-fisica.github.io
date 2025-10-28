@@ -18,4 +18,14 @@
 </div>
 
 <!-- Modal instance: rendered when modalOpen is true -->
-<app-modal [open]="modalOpen" [title]="modalItem?.titulo" [content]="modalItem?.descripcion" [next]="modalItem?.siguiente" [previous]="modalItem?.anterior" [imagen]="modalItem?.imagen" (close)="closeModal()"></app-modal>
+<app-modal 
+  [open]="modalOpen" 
+  [title]="modalItem?.titulo" 
+  [content]="modalItem?.descripcion" 
+  [next]="modalItem?.siguiente" 
+  [previous]="modalItem?.anterior" 
+  [imagen]="modalItem?.imagen" 
+  (close)="closeModal()"
+  (onNext)="goToNextModal()"
+  (onPrevious)="goToPreviousModal()"
+></app-modal>

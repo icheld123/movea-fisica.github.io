@@ -8,6 +8,7 @@ import { ModuleStateService } from '../../services/module-state.service';
 })
 export class SidebarComponent {
   expanded: string | null = null;
+  mobileOpen = false;
   menu = [
     {
       id: 'modulo-1',
@@ -70,6 +71,8 @@ export class SidebarComponent {
   selectModule(id: string | null) {
     this.moduleState.selectModule(id);
     this.expanded = id;
+    // if we're on a small screen and a link was clicked, close the mobile sidebar
+    this.mobileOpen = false;
   }
 
   toggle(id: string) {

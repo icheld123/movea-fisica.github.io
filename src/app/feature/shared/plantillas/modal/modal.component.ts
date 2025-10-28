@@ -13,8 +13,22 @@ export class ModalComponent {
   @Input() previous?: string | null;
   @Input() next?: string | null;
   @Output() close = new EventEmitter<void>();
+  @Output() onNext = new EventEmitter<void>();
+  @Output() onPrevious = new EventEmitter<void>();
 
   onClose() {
     this.close.emit();
+  }
+
+  goNext() {
+    if (this.next) {
+      this.onNext.emit();
+    }
+  }
+
+  goPrevious() {
+    if (this.previous) {
+      this.onPrevious.emit();
+    }
   }
 }
