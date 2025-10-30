@@ -1,0 +1,12 @@
+<div *ngIf="titulo && descripcion" class="flex flex-col items-center min-h-screen text-black">
+  <div class="flex items-center justify-center mb-8 gap-4 flex-wrap">
+    <h1 class="text-center text-2xl font-bold mb-6">{{ titulo }}</h1><br>
+    <p class="text-center mb-8">{{ descripcion }}</p>
+  </div>
+
+  <div *ngIf="safeUrl" class="w-full flex justify-center mb-8">
+    <iframe [src]="safeUrl" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <button (click)="volverClick()" class="mt-4 px-6 py-2 bg-[#8392e0] text-white rounded-full font-semibold hover:bg-grey-200 focus:outline-none focus:ring-2 focus:ring-blue-500">Volver</button>
+</div>
