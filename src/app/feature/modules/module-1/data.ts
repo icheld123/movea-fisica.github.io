@@ -2,7 +2,7 @@ export const MODULO1_DATA = {
   observarFenomeno: {
     titulo: "MÓDULO 1: EL GRAN RÍO DEL CIELO",
     descripcion: "¿Sabías que la atmósfera está compuesta de fluidos gaseosos como el vapor de agua y que cambian constantemente? Observa el fenómeno Brewer-Dobson, un proceso crucial en la circulación atmosférica global.",
-    textoBoton: "Descubrir cómo...",
+    textoBoton: "Descubrir cómo",
   },
   explicarObservado: {
     titulo: "Un Océano de Aire Organizado: La Circulación Global",

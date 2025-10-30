@@ -4,14 +4,14 @@
     <p class="mb-8">{{ data.descripcion }}</p>
 
     <ng-container *ngIf="layoutType === 'grid'">
-      <div class="grid md:grid-cols-2 gap-8 mb-8">
-        <div *ngIf="data.imagen" class="relative">
+      <div class="flex flex-col md:grid md:grid-cols-2 gap-8 mb-8">
+        <div *ngIf="data.imagen" class="relative w-full">
           <img [src]="data.imagen" [alt]="data.titulo" class="w-full rounded-lg shadow-lg">
-          <p *ngIf="data.creditos" class="text-xs text-gray-400 mt-2">{{ data.creditos }}</p>
+          <p *ngIf="data.creditos" class="text-xs text-gray-400 mt-2 break-words">{{ data.creditos }}</p>
         </div>
 
-        <div class="space-y-6">
-          <div *ngFor="let item of data.contenido" class="bg-white/10 rounded-lg">
+        <div class="space-y-6 mt-4 md:mt-0">
+          <div *ngFor="let item of data.contenido" class="bg-white/10 rounded-lg p-4">
             <h3 class="font-semibold text-blue-300 mb-2">{{ item.nombre }}</h3>
             <p class="text-black-200">{{ item.descripcion }}</p>
           </div>
