@@ -88,7 +88,6 @@ export class EntenderFenonemoComponent {
         descripcion: moduleData.descripcion,
         botonesModales: moduleData.botonesModales,
       };
-      console.log(this.data);
     }
   }
 
