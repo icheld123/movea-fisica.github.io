@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-modal',
@@ -12,9 +13,16 @@ export class ModalComponent {
   @Input() imagen?: string;
   @Input() previous?: string | null;
   @Input() next?: string | null;
+  safeUrl: SafeResourceUrl | null = null;
+  @Input() set enlace(url: string | undefined) {
+  this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url!);
+  }
+
   @Output() close = new EventEmitter<void>();
   @Output() onNext = new EventEmitter<void>();
   @Output() onPrevious = new EventEmitter<void>();
+
+  constructor(private sanitizer: DomSanitizer) {}
 
   onClose() {
     this.close.emit();

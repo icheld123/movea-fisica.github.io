@@ -53,8 +53,26 @@ export const MODULO1_DATA = {
     ]
   },
   horaExplorar: {
-    titulo: "Prueba Final Módulo 1",
-    descripcion: "Evalúa tus conocimientos con esta prueba."
+    titulo: 'Hora de explorar',
+    descripcion: 'El movimiento del aire, su temperatura y presión están conectados. Para complementar la teoría, experimenta tú mismo con estos conceptos en los simuladores interactivos de PhET Colorado.',
+    simulaciones: [
+      {
+        titulo: "Estados de la materia",
+        descripcion: "Observa cómo se comportan las partículas al cambiar la temperatura. ¿Qué le pasa al 'aire' cuando se calienta?",
+        enlace: "https://phet.colorado.edu/sims/html/states-of-matter/latest/states-of-matter_all.html?locale=es",
+      },
+      {
+        titulo: "Propiedades de los gases",
+        descripcion: "Explora la relación entre la presión y la temperatura en un gas como el aire.",
+        enlace: "https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_all.html?locale=es_PE",
+      },
+      {
+        titulo: "Baja presión",
+        descripcion: "Descubre cómo cambia la presión con la altitud en un fluido.",
+        enlace: "https://phet.colorado.edu/sims/html/under-pressure/latest/under-pressure_all.html?locale=es",
+      }
+    ]
+
   },
   pruebaConocimiento: {
     titulo: "Práctica Módulo 1",
