@@ -1,8 +1,8 @@
-<div class="plantilla flex flex-col items-center justify-center text-center p-8" [ngStyle]="backgroundStyle">
-  <div class="max-w-2xl mx-auto p-8 bg-black/10 rounded-lg backdrop-blur-sm">
+<div class="plantilla flex flex-col items-center justify-center text-center p-6" [ngStyle]="backgroundStyle">
+  <div class="max-w-2xl mx-auto p-10 bg-black/10 rounded-lg backdrop-blur-sm">
     <h2 class="text-3xl font-bold mb-4 text-white">{{ titulo }}</h2>
     <p class="text-lg mb-8 text-gray-200">{{ descripcion }}</p>
-    <div *ngIf="textoBoton" class="absolute right-10 bottom-5">
+    <div *ngIf="textoBoton" class="mt-8 sm:flex sm:items-center sm:justify-center lg:right-10 bottom-1">
       <button (click)="onButtonClick()"
         class="group inline-flex items-center px-6 py-3 text-base font-medium text-white bg-[#8392e0] border border-transparent rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-transform transform hover:-translate-y-0.5 cursor-pointer">
         <span class="mr-3">{{ textoBoton }}</span>
