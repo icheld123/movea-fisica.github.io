@@ -10,6 +10,7 @@ import { PresentacionModuloComponent } from './plantillas/presentacion-modulo/pr
 import { AppRoutingModule } from "../app-routing.module";
 import { ModalComponent } from './plantillas/modal/modal.component';
 import { SimulacionComponent } from './plantillas/simulacion/simulacion.component';
+import { EnConstruccionComponent } from './plantillas/en-construccion/en-construccion.component';
 
 @NgModule({
 	declarations: [
@@ -22,7 +23,8 @@ import { SimulacionComponent } from './plantillas/simulacion/simulacion.componen
 		EncuestaSatisfaccionComponent,
   		PresentacionModuloComponent,
 		ModalComponent,
-		SimulacionComponent
+		SimulacionComponent,
+  		EnConstruccionComponent
 	],
 	imports: [
     CommonModule,
@@ -37,7 +39,8 @@ import { SimulacionComponent } from './plantillas/simulacion/simulacion.componen
 		EncuestaSatisfaccionComponent,
 		PresentacionModuloComponent,
 		ModalComponent,
-		SimulacionComponent
+		SimulacionComponent,
+		EnConstruccionComponent
 	]
 })
 export class SharedModule {}
