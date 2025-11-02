@@ -1,15 +1,8 @@
-<div class="grid grid-cols-1 lg:grid-cols-[16rem_1fr]">
-  <aside class="hidden lg:block">
+<div class="">
+  <div >
     <app-sidebar></app-sidebar>
-  </aside>
-
-  <div class="flex flex-col">
-    <header>
-      <app-navbar></app-navbar>
-    </header>
-    <app-sidebar></app-sidebar>
-
-    <main class="p-6 flex-1 mt-16 lg:ml-20 md:ml-64 relative transition-all">
+    <app-navbar></app-navbar>
+    <main class="p-6 flex-1 mt-16 relative transition-all">
       <router-outlet></router-outlet>
     </main>
   </div>
