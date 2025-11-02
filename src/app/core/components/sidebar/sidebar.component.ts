@@ -8,8 +8,14 @@ import { ModuleStateService } from '../../services/module-state.service';
 })
 export class SidebarComponent {
   expanded: string | null = null;
-  mobileOpen = false;
+  isOpen = false; // Default to closed
+  
+  constructor(private moduleState: ModuleStateService) {}
   menu = [
+    {
+      id: 'inicio',
+      label: 'Inicio',
+    },
     {
       id: 'modulo-1',
       label: 'Módulo 1',
@@ -65,14 +71,9 @@ export class SidebarComponent {
   ];
 
 
-  constructor(private moduleState: ModuleStateService) {}
-
-  // called when user clicks a fase link so other parts (module components) know
-  selectModule(id: string | null) {
-    this.moduleState.selectModule(id);
-    this.expanded = id;
-    // if we're on a small screen and a link was clicked, close the mobile sidebar
-    this.mobileOpen = false;
+  selectModule(moduleId: string) {
+    this.moduleState.selectModule(moduleId);
+    this.isOpen = true;
   }
 
   toggle(id: string) {
