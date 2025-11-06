@@ -1,6 +1,6 @@
 <div class="flex flex-col items-center min-h-screen text-black w-full p-8">
 
-  <!-- 🔹 Tabs dinámicos -->
+  <!--  Tabs dinámicos -->
   <div class="w-full border-b border-gray-300 mb-6 flex justify-center flex-wrap">
     <button
       *ngFor="let section of sections; let i = index"
@@ -14,7 +14,7 @@
     </button>
   </div>
 
-  <!-- 🔹 Contenido de la sección activa -->
+  <!-- Contenido de la sección activa -->
   <div *ngIf="sections.length > 0" class="w-full">
     <ng-container *ngIf="sections[activeTabIndex] as activeSection">
 
@@ -24,8 +24,8 @@
         <p class="text-gray-700 mb-4">{{ activeSection.descripcion }}</p>
       </div>
 
-      <!-- Caso 1.1: Células (como la sección 1) -->
-      <div *ngIf="activeSection.imagen || activeSection.celulas" 
+      <!-- Caso 1.1: Items (como la sección 1) -->
+      <div *ngIf="activeSection.imagen || activeSection.items" 
           class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8 items-center">
 
         <!-- Columna de imagen -->
@@ -38,7 +38,7 @@
           </p>
         </div>
 
-        <!-- Columna de células -->
+        <!-- Columna de items -->
         <div *ngIf="activeSection.items" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           <div *ngFor="let item of activeSection.items" 
               class="bg-white rounded-lg shadow p-4 hover:shadow-md transition">
@@ -83,7 +83,6 @@
   </div>
 </div>
 
-<!-- 🔹 Modal conservado -->
 <app-modal 
   [open]="modalOpen" 
   [title]="modalItem?.titulo" 
