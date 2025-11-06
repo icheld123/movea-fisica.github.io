@@ -1,9 +1,6 @@
-<!-- Simple reusable modal. Visible when `open` is true. -->
 <div *ngIf="open" class="fixed inset-0 z-[9999] flex items-center justify-center">
-	<!-- backdrop -->
 	<div class="absolute inset-0 bg-black/50" (click)="onClose()" aria-hidden="true"></div>
 
-	<!-- modal panel -->
 	<div class="relative bg-white rounded-lg shadow-xl max-w-4xl w-full mx-4 p-6 z-10">
         <div class="flex justify-between items-start">
             <h3 class="text-xl font-semibold text-gray-900">{{ title }}</h3>
@@ -17,19 +14,30 @@
                 <div [innerHTML]="content"></div>
             </div>
             <div>
-            <img [src]="imagen" alt="Imagen de {{ title }}" class="w-full rounded-lg shadow-lg">
+            <img *ngIf="imagen" [src]="imagen" alt="Imagen de {{ title }}" class="w-full rounded-lg shadow-lg">
+            <iframe
+                *ngIf="safeUrl"
+                [src]="safeUrl"
+                class="w-full h-64 rounded-lg shadow-lg"
+                frameborder="0"
+                allowfullscreen
+            ></iframe>
             </div>
         </div>
 
         <ng-container  *ngIf="next || previous" class="">
             <div class="flex items-center justify-center mb-8 gap-4 flex-wrap">
-                <button *ngIf ="previous"
+                <button *ngIf="previous"
+                    (click)="goPrevious()"
                     class="mx-4 group relative inline-flex items-center px-6 py-3 text-base font-medium text-white bg-[#8392e0] rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform duration-200 hover:-translate-y-0.5">
+                    <span class="mr-2 transform rotate-180">→</span>
                     Anterior
                 </button>
-                <button *ngIf ="next"
+                <button *ngIf="next"
+                    (click)="goNext()"
                     class="mx-4 group relative inline-flex items-center px-6 py-3 text-base font-medium text-white bg-[#8392e0] rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform duration-200 hover:-translate-y-0.5">
                     Siguiente
+                    <span class="ml-2">→</span>
                 </button>
                 <button (click)="onClose()" 
                     class="mx-4 group relative inline-flex items-center px-6 py-3 text-base font-medium text-white bg-gray-400 hover:bg-gray-500 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform duration-200 hover:-translate-y-0.5">

@@ -54,6 +54,28 @@ export class EntenderFenonemoComponent {
     this.modalItem = null;
   }
 
+  goToNextModal() {
+    if (this.modalItem?.siguiente && this.data?.botonesModales) {
+      const nextModal = this.data.botonesModales.find(
+        modal => this.modalItem?.siguiente === modal.titulo?.toLowerCase().replace(/\s+/g, '-')
+      );
+      if (nextModal) {
+        this.modalItem = nextModal;
+      }
+    }
+  }
+
+  goToPreviousModal() {
+    if (this.modalItem?.anterior && this.data?.botonesModales) {
+      const previousModal = this.data.botonesModales.find(
+        modal => this.modalItem?.anterior === modal.titulo?.toLowerCase().replace(/\s+/g, '-')
+      );
+      if (previousModal) {
+        this.modalItem = previousModal;
+      }
+    }
+  }
+
   ngOnDestroy(): void {
     this.sub?.unsubscribe();
   }
@@ -66,7 +88,6 @@ export class EntenderFenonemoComponent {
         descripcion: moduleData.descripcion,
         botonesModales: moduleData.botonesModales,
       };
-      console.log(this.data);
     }
   }
 

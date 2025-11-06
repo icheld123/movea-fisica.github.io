@@ -8,7 +8,9 @@ import { PruebaConocimientosComponent } from './plantillas/prueba-conocimientos/
 import { EncuestaSatisfaccionComponent } from './plantillas/encuesta-satisfaccion/encuesta-satisfaccion.component';
 import { PresentacionModuloComponent } from './plantillas/presentacion-modulo/presentacion-modulo.component';
 import { AppRoutingModule } from "../app-routing.module";
-import { ModalComponent } from '../feature/shared/plantillas/modal/modal.component';
+import { ModalComponent } from './plantillas/modal/modal.component';
+import { SimulacionComponent } from './plantillas/simulacion/simulacion.component';
+import { EnConstruccionComponent } from './plantillas/en-construccion/en-construccion.component';
 
 @NgModule({
 	declarations: [
@@ -19,8 +21,10 @@ import { ModalComponent } from '../feature/shared/plantillas/modal/modal.compone
 		HoraExplorarComponent,
 		PruebaConocimientosComponent,
 		EncuestaSatisfaccionComponent,
-  		PresentacionModuloComponent
-		,ModalComponent
+  		PresentacionModuloComponent,
+		ModalComponent,
+		SimulacionComponent,
+  		EnConstruccionComponent
 	],
 	imports: [
     CommonModule,
@@ -34,7 +38,9 @@ import { ModalComponent } from '../feature/shared/plantillas/modal/modal.compone
 		PruebaConocimientosComponent,
 		EncuestaSatisfaccionComponent,
 		PresentacionModuloComponent,
-		ModalComponent
+		ModalComponent,
+		SimulacionComponent,
+		EnConstruccionComponent
 	]
 })
 export class SharedModule {}
