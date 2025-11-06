@@ -1,81 +1,89 @@
-<div class="flex flex-col items-center min-h-screen text-black">
-  <!-- Vista principal o vista de modales: solo una está presente en el DOM -->
-  <div *ngIf="data && !showModales" class="w-full p-8">
-    <h1 class="text-2xl font-bold mb-6">{{ data.titulo }}</h1>
-    <p class="mb-8">{{ data.descripcion }}</p>
+<div class="flex flex-col items-center min-h-screen text-black w-full p-8">
 
-    <ng-container *ngIf="layoutType === 'grid'">
-      <div class="flex flex-col md:grid md:grid-cols-2 gap-8 mb-8">
-        <div *ngIf="data.imagen" class="relative w-full">
-          <img [src]="data.imagen" [alt]="data.titulo" class="w-full rounded-lg shadow-lg">
-          <p *ngIf="data.creditos" class="text-xs text-gray-400 mt-2 break-words">{{ data.creditos }}</p>
+  <!-- 🔹 Tabs dinámicos -->
+  <div class="w-full border-b border-gray-300 mb-6 flex justify-center flex-wrap">
+    <button
+      *ngFor="let section of sections; let i = index"
+      (click)="setActiveTab(i)"
+      [class.bg-[#8392e0]]="isActive(i)"
+      [class.text-white]="isActive(i)"
+      [class.text-gray-700]="!isActive(i)"
+      class="px-4 py-2 m-1 text-sm font-medium rounded-t-lg transition-colors duration-200 hover:bg-blue-100"
+    >
+      Sección {{ section.id }}
+    </button>
+  </div>
+
+  <!-- 🔹 Contenido de la sección activa -->
+  <div *ngIf="sections.length > 0" class="w-full">
+    <ng-container *ngIf="sections[activeTabIndex] as activeSection">
+
+      <!-- Caso 1: Sección con título y descripción -->
+      <div *ngIf="activeSection.titulo" class="text-center mb-6">
+        <h2 class="text-2xl font-bold mb-2">{{ activeSection.titulo }}</h2>
+        <p class="text-gray-700 mb-4">{{ activeSection.descripcion }}</p>
+      </div>
+
+      <!-- Caso 1.1: Células (como la sección 1) -->
+      <div *ngIf="activeSection.imagen || activeSection.celulas" 
+          class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8 items-center">
+
+        <!-- Columna de imagen -->
+        <div *ngIf="activeSection.imagen" class="text-center">
+          <img [src]="activeSection.imagen" 
+              class="mx-auto rounded-lg shadow-lg w-full max-w-md lg:max-w-lg">
+          <p *ngIf="activeSection.creditos" 
+            class="text-xs text-gray-400 mt-2 break-words">
+            {{ activeSection.creditos }}
+          </p>
         </div>
 
-        <div class="space-y-6 mt-4 md:mt-0">
-          <div *ngFor="let item of data.contenido" class="bg-white/10 rounded-lg p-4">
-            <h3 class="font-semibold text-blue-300 mb-2">{{ item.nombre }}</h3>
-            <p class="text-black-200">{{ item.descripcion }}</p>
+        <!-- Columna de células -->
+        <div *ngIf="activeSection.items" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          <div *ngFor="let item of activeSection.items" 
+              class="bg-white rounded-lg shadow p-4 hover:shadow-md transition">
+            <h3 class="font-semibold text-blue-700 mb-2">{{ item.nombre }}</h3>
+            <p class="text-gray-700">{{ item.descripcion }}</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Caso 2: Modales (como la sección 2) -->
+      <div *ngIf="activeSection.modales">
+        <div *ngFor="let modal of activeSection.modales" class="text-center mb-6">
+          <h3 class="text-xl font-semibold mb-3">{{ modal.titulo }}</h3>
+          <p class="text-gray-700 mb-6">{{ modal.descripcion }}</p>
+
+          <div class="flex flex-wrap justify-center gap-3">
+            <button
+              *ngFor="let boton of modal.botonesModales"
+              (click)="openModal(boton)"
+              class="px-5 py-2 bg-[#8392e0] text-white rounded-full hover:bg-[#6f7fd0] transition">
+              {{ boton.titulo }}
+            </button>
           </div>
         </div>
       </div>
-    </ng-container>
 
-    <ng-container *ngIf="layoutType === 'lista'">
-      <div class="space-y-6">
-        <div *ngFor="let item of data.contenido" class="bg-white/10 rounded-lg p-4">
-          <h3 class="text-xl font-semibold text-blue-300 mb-2">{{ item.nombre }}</h3>
-          <p class="text-gray-200">{{ item.descripcion }}</p>
-        </div>
-      </div>
-    </ng-container>
+      <!-- Caso 3: Transición (como la sección 3) -->
+      <div *ngIf="activeSection.transicion" class="text-center">
+        <h3 class="text-xl font-semibold mb-3">{{ activeSection.transicion.titulo }}</h3>
+        <p class="text-gray-700 mb-6">{{ activeSection.transicion.descripcion }}</p>
 
-    <ng-container *ngIf="layoutType === 'tabs'">
-    </ng-container>
-
-    <ng-container *ngIf="layoutType === 'simple'">
-      <div class="prose prose-invert max-w-none">
-        <div [innerHTML]="data.contenido"></div>
-      </div>
-    </ng-container>
-
-    <div *ngIf="data.textoBoton" class="absolute right-10 bottom-5">
-      <button (click)="onButtonClick()"
-        class="group relative inline-flex items-center px-8 py-3 text-lg font-medium text-white bg-[#8392e0] rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200 cursor-pointer">
-        {{ data.textoBoton }}
-        <span class="ml-2 transform group-hover:translate-x-1 transition-transform duration-200">→</span>
-      </button>
-    </div>
-  </div>
-
-  <div *ngIf="data && showModales" id="modales-section" class="w-full p-8">
-    <ng-container *ngIf="data.modales && data.modales.length > 0">
-      <div class="flex flex-col items-center mb-8 text-center">
-        <h1 class="text-2xl font-bold mb-4">{{ data.titulo }}</h1>
-        <p class="mb-6">{{ data.descripcion }}</p>
-      </div>
-      <ng-container *ngFor="let modal of data.modales">
-        <div class="flex flex-wrap justify-center gap-4 mb-4">
-          <ng-container *ngFor="let item of modal.botonesModales">
-            <button
-              (click)="openModal(item)"
-              class="group relative inline-flex items-center px-6 py-3 text-base font-medium text-white bg-[#8392e0] rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform duration-200 hover:-translate-y-0.5">
-              {{ item.titulo }}
-            </button>
-          </ng-container>
-        </div>
-      </ng-container>
-      <div class="flex flex-wrap justify-center gap-4 mb-4">
-        <button
-          (click)="goBack()"
-          class="group relative inline-flex items-center px-6 py-3 text-base font-medium text-white bg-gray-500 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 transition-transform duration-200 hover:-translate-y-0.5">
-          ← Volver
+        <button 
+          *ngIf="activeSection.transicion.botones?.ruta" 
+          [routerLink]="activeSection.transicion.botones.ruta"
+          class="px-6 py-2 bg-[#8392e0] text-white rounded-full hover:bg-[#6f7fd0] transition"
+        >
+          {{ activeSection.transicion.botones.titulo }}
         </button>
       </div>
     </ng-container>
   </div>
 </div>
 
-
+<!-- 🔹 Modal conservado -->
 <app-modal 
   [open]="modalOpen" 
   [title]="modalItem?.titulo" 

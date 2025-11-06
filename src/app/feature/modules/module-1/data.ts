@@ -5,55 +5,68 @@ export const MODULO1_DATA = {
     textoBoton: "Descubrir cómo",
   },
   explicarObservado: {
-    titulo: "Un Océano de Aire Organizado: La Circulación Global",
-    descripcion: "Aunque el movimiento del aire puede parecer caótico, a gran escala se organiza en gigantescos patrones de circulación que distribuyen el calor desde el ecuador hacia los polos. Estas son las tres células principales en cada hemisferio:",
-    celulas: [
-      {
-        nombre: "Célula de Hadley (0° a 30°)",
-        descripcion: "El motor del trópico. El aire caliente y húmedo asciende en el ecuador, se enfría, y luego desciende en las zonas subtropicales."
-      },
-      {
-        nombre: "Célula de Ferrel (30° a 60°)",
-        descripcion: "La célula de las latitudes medias. No es impulsada directamente por la temperatura, sino que actúa como un engranaje entre las otras dos células, con un movimiento promedio de aire superficial hacia los polos."
-      },
-      {
-        nombre: "Célula Polar (60° a 90°)",
-        descripcion: "En los polos, el aire frío y denso desciende y se desplaza hacia latitudes más bajas."
+    1: {
+      titulo: "Un Océano de Aire Organizado: La Circulación Global",
+      descripcion: "Aunque el movimiento del aire puede parecer caótico, a gran escala se organiza en gigantescos patrones de circulación que distribuyen el calor desde el ecuador hacia los polos. Estas son las tres células principales en cada hemisferio:",
+      items: [
+        {
+          nombre: "Célula de Hadley (0° a 30°)",
+          descripcion: "El motor del trópico. El aire caliente y húmedo asciende en el ecuador, se enfría, y luego desciende en las zonas subtropicales."
+        },
+        {
+          nombre: "Célula de Ferrel (30° a 60°)",
+          descripcion: "La célula de las latitudes medias. No es impulsada directamente por la temperatura, sino que actúa como un engranaje entre las otras dos células, con un movimiento promedio de aire superficial hacia los polos."
+        },
+        {
+          nombre: "Célula Polar (60° a 90°)",
+          descripcion: "En los polos, el aire frío y denso desciende y se desplaza hacia latitudes más bajas."
+        }
+      ],
+      imagen: "assets/modulo-1/celulas-hadley-2.jpg",
+      textoBoton: "Ver la evidencia",
+      creditos: "Imagen tomada de: https://4.bp.blogspot.com/_KGhu7uNajfQ/TMGw_HD4mWI/AAAAAAAAARs/Wv8JyFezFDk/s1600/celulas-hadley-2.jpg",
+    },
+    2: {
+      modales: [
+        {
+          titulo: 'Evidencia del Transporte Atmosférico: La Señal del "Tape Recorder"',
+          descripcion: 'El "tape recorder" atmosférico es un término análogo utilizado para describir la "grabación" de las variaciones estacionales de un trazador químico (como el vapor de agua) en las masas de aire que ascienden lentamente en la estratosfera tropical. A medida que el aire sube, transporta consigo la firma de la concentración del trazador presente en la tropopausa, creando un patrón vertical que, al ser visualizado en el tiempo, se asemeja a las bandas de una cinta magnética. Este fenómeno constituye una de las evidencias más directas del lento ascenso de la célula de Hadley hacia la estratosfera.',
+          botonesModales: [
+            {
+              titulo: "Zona Tropical",
+              descripcion: "En el trópico, bajo el dominio de la célula de Hadley, observamos la señal canónica del tape recorder. Las bandas diagonales ascendentes muestran cómo el aire, al elevarse, transporta la firma estacional del vapor de agua hacia la estratosfera. Este patrón es la evidencia directa del lento ascenso que define la rama ascendente de la circulación Brewer- Dobson.",
+              imagen: "assets/modulo-1/zona-tropical-2005-2015.png",
+              anterior: null,
+              siguiente: "latitudes-medias"
+            },
+            {
+              titulo: "Latitudes Medias",
+              descripcion: "En las latitudes medias, la señal de ascenso desaparece. La dinámica aquí está dominada por la célula de Ferrel, que se caracteriza por un movimiento de aire superficial hacia los polos y un descenso de aire estratosférico. El gráfico muestra un fuerte ciclo estacional, pero sin la propagación vertical vista en el trópico, indicando una ausencia de ascenso neto a gran escala hacia la estratosfera.",
+              imagen: "assets/modulo-1/zonas-medias-2004-2015.png",
+              anterior: "zona-tropical",
+              siguiente: "zona-polar"
+            },
+            {
+              titulo: "Zona Polar",
+              descripcion: "En las regiones polares, el aire es extremadamente seco, una característica del dominio de la célula Polar. Este es el punto de descenso principal de la circulación Brewer- Dobson. El aire que ha viajado por la estratosfera pierde su humedad y desciende de nuevo a la troposfera, por lo que no se observa ninguna señal de ascenso, sino un fuerte ciclo anual influenciado por el vórtice polar.",
+              imagen: "assets/modulo-1/zonas-polares-2005-2015.png",
+              anterior: "latitudes-medias",
+              siguiente: null
+            }
+          ]
+        },
+      ],
+    },
+    3: {
+      transicion: {
+      titulo: "¿Notaste los patrones?",
+      descripcion: "Como viste, la señal de ascenso clara del 'tape recorder' solo aparece en la zona tropical. En las latitudes medias y polares, el patrón es muy diferente. ¿Por qué ocurre esto? La respuesta está en los principios fundamentales que gobiernan la atmósfera. Para entenderlo, necesitamos definir dos ideas clave: Fluido y Flujo.",
+      botones:{
+        titulo: 'Entender la teoría →',
+        ruta: '/modulo-1/entender-fenomeno'
       }
-    ],
-    imagen: "assets/modulo-1/celulas-hadley-2.jpg",
-    textoBoton: "Ver la evidencia",
-    creditos: "Imagen tomada de: https://4.bp.blogspot.com/_KGhu7uNajfQ/TMGw_HD4mWI/AAAAAAAAARs/Wv8JyFezFDk/s1600/celulas-hadley-2.jpg",
-    modales: [
-      {
-        titulo: 'Evidencia del Transporte Atmosférico: La Señal del "Tape Recorder"',
-        descripcion: 'El "tape recorder" atmosférico es un término análogo utilizado para describir la "grabación" de las variaciones estacionales de un trazador químico (como el vapor de agua) en las masas de aire que ascienden lentamente en la estratosfera tropical. A medida que el aire sube, transporta consigo la firma de la concentración del trazador presente en la tropopausa, creando un patrón vertical que, al ser visualizado en el tiempo, se asemeja a las bandas de una cinta magnética. Este fenómeno constituye una de las evidencias más directas del lento ascenso de la célula de Hadley hacia la estratosfera.',
-        botonesModales: [
-          {
-            titulo: "Zona Tropical",
-            descripcion: "En el trópico, bajo el dominio de la célula de Hadley, observamos la señal canónica del tape recorder. Las bandas diagonales ascendentes muestran cómo el aire, al elevarse, transporta la firma estacional del vapor de agua hacia la estratosfera. Este patrón es la evidencia directa del lento ascenso que define la rama ascendente de la circulación Brewer- Dobson.",
-            imagen: "assets/modulo-1/zona-tropical-2005-2015.png",
-            anterior: null,
-            siguiente: "latitudes-medias"
-          },
-          {
-            titulo: "Latitudes Medias",
-            descripcion: "En las latitudes medias, la señal de ascenso desaparece. La dinámica aquí está dominada por la célula de Ferrel, que se caracteriza por un movimiento de aire superficial hacia los polos y un descenso de aire estratosférico. El gráfico muestra un fuerte ciclo estacional, pero sin la propagación vertical vista en el trópico, indicando una ausencia de ascenso neto a gran escala hacia la estratosfera.",
-            imagen: "assets/modulo-1/zonas-medias-2004-2015.png",
-            anterior: "zona-tropical",
-            siguiente: "zona-polar"
-          },
-          {
-            titulo: "Zona Polar",
-            descripcion: "En las regiones polares, el aire es extremadamente seco, una característica del dominio de la célula Polar. Este es el punto de descenso principal de la circulación Brewer- Dobson. El aire que ha viajado por la estratosfera pierde su humedad y desciende de nuevo a la troposfera, por lo que no se observa ninguna señal de ascenso, sino un fuerte ciclo anual influenciado por el vórtice polar.",
-            imagen: "assets/modulo-1/zonas-polares-2005-2015.png",
-            anterior: "latitudes-medias",
-            siguiente: null
-          }
-        ]
-      },
-
-    ]
+    }
+    }
   },
   entenderFenomeno: {
     titulo: 'Evidencia del Transporte Atmosférico: La Señal del "Tape Recorder"',
