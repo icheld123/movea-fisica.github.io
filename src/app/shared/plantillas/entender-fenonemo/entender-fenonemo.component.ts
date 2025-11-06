@@ -25,12 +25,14 @@ interface botones {
 })
 export class EntenderFenonemoComponent {
   currentModule: string | null = null;
-  data: EntenderData | null = null;
-  botones: botones[] | null = null;
-  // modal state
+  data: any = null;
   modalOpen = false;
-  modalItem: botones | null = null;
+  modalItem: any = null;
   private sub: Subscription | null = null;
+
+  // Nueva propiedad: pestaña activa
+  activeTab: number = 1;
+  tabs: any[] = [];
   
   constructor(
     private moduleState: ModuleStateService,
@@ -43,39 +45,6 @@ export class EntenderFenonemoComponent {
       this.loadModuleData();
     });
   }
-
-  openModal(item: botones) {
-    this.modalItem = item;
-    this.modalOpen = true;
-  }
-
-  closeModal() {
-    this.modalOpen = false;
-    this.modalItem = null;
-  }
-
-  goToNextModal() {
-    if (this.modalItem?.siguiente && this.data?.botonesModales) {
-      const nextModal = this.data.botonesModales.find(
-        modal => this.modalItem?.siguiente === modal.titulo?.toLowerCase().replace(/\s+/g, '-')
-      );
-      if (nextModal) {
-        this.modalItem = nextModal;
-      }
-    }
-  }
-
-  goToPreviousModal() {
-    if (this.modalItem?.anterior && this.data?.botonesModales) {
-      const previousModal = this.data.botonesModales.find(
-        modal => this.modalItem?.anterior === modal.titulo?.toLowerCase().replace(/\s+/g, '-')
-      );
-      if (previousModal) {
-        this.modalItem = previousModal;
-      }
-    }
-  }
-
   ngOnDestroy(): void {
     this.sub?.unsubscribe();
   }
@@ -83,12 +52,12 @@ export class EntenderFenonemoComponent {
   private loadModuleData() {
     if (this.currentModule === 'modulo-1') {
       const moduleData = MODULO1_DATA.entenderFenomeno;
-      this.data = {
-        titulo: moduleData.titulo,
-        descripcion: moduleData.descripcion,
-        botonesModales: moduleData.botonesModales,
-      };
+      this.tabs = Object.values(moduleData);
+      this.data = moduleData;
     }
   }
 
+  selectTab(index: number) {
+    this.activeTab = index;
+  }
 }
