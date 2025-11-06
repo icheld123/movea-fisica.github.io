@@ -69,31 +69,34 @@ export const MODULO1_DATA = {
     }
   },
   entenderFenomeno: {
-    titulo: 'Evidencia del Transporte Atmosférico: La Señal del "Tape Recorder"',
-    descripcion: 'El "tape recorder" atmosférico es un término análogo utilizado para describir la "grabación" de las variaciones estacionales de un trazador químico (como el vapor de agua) en las masas de aire que ascienden lentamente en la estratosfera tropical. A medida que el aire sube, transporta consigo la firma de la concentración del trazador presente en la tropopausa, creando un patrón vertical que, al ser visualizado en el tiempo, se asemeja a las bandas de una cinta magnética. Este fenómeno constituye una de las evidencias más directas del lento ascenso de la célula de Hadley hacia la estratosfera.',
-    botonesModales: [
-      {
-        titulo: "Zona Tropical",
-        descripcion: "En el trópico, bajo el dominio de la célula de Hadley, observamos la señal canónica del tape recorder. Las bandas diagonales ascendentes muestran cómo el aire, al elevarse, transporta la firma estacional del vapor de agua hacia la estratosfera. Este patrón es la evidencia directa del lento ascenso que define la rama ascendente de la circulación Brewer- Dobson.",
-        imagen: "assets/modulo-1/zona-tropical-2005-2015.png",
-        anterior: null,
-        siguiente: "latitudes-medias"
+    1: {
+      titulo: "Fluido",
+      descripcion: "En física, un fluido es una sustancia que se deforma continuamente bajo la aplicación de una tensión cortante, sin importar cuán pequeña sea. En términos más simples, es una sustancia cuyas partículas no tienen una posición fija y pueden moverse con libertad. El aire que compone nuestra atmósfera, una mezcla de gases como nitrógeno, oxígeno y vapor de agua, es un ejemplo clásico de un fluido compresible.",
+      imagen: "assets/modulo-1/zonas-polares-2005-2015.png",
+      descripcionImagen: "Este GIF muestra el flujo de vapor de agua a lo largo de varios meses. Observa cómo las concentraciones (el fluido) son transportadas por la circulación atmosférica a gran escala.",
       },
-      {
-        titulo: "Latitudes Medias",
-        descripcion: "En las latitudes medias, la señal de ascenso desaparece. La dinámica aquí está dominada por la célula de Ferrel, que se caracteriza por un movimiento de aire superficial hacia los polos y un descenso de aire estratosférico. El gráfico muestra un fuerte ciclo estacional, pero sin la propagación vertical vista en el trópico, indicando una ausencia de ascenso neto a gran escala hacia la estratosfera.",
-        imagen: "assets/modulo-1/zonas-medias-2004-2015.png",
-        anterior: "zona-tropical",
-        siguiente: "zona-polar"
+    2: {
+      titulo: "Flujo",
+      descripcion: "El flujo es el movimiento macroscópico y colectivo de un fluido. Es el resultado de diferencias de presión y temperatura que impulsan a las partículas del fluido en una dirección general. En la atmósfera, este movimiento se manifiesta como el viento. \n El flujo puede ser:",
+      imagen: "assets/modulo-1/zonas-polares-2005-2015.png",
+      descripcionImagen: "Este GIF muestra el flujo de vapor de agua a lo largo de varios meses. Observa cómo las concentraciones (el fluido) son transportadas por la circulación atmosférica a gran escala.",
+      items: [
+        {
+          nombre: "Flujo Laminar",
+          descripcion: "Un flujo suave y ordenado donde las partículas del fluido se mueven en capas paralelas sin mezclarse entre sí."
+        },
+        {
+          nombre: "Flujo Turbulento",
+          descripcion: "Un flujo caótico y desordenado donde las partículas del fluido se mezclan y forman remolinos."
+        }
+      ],
       },
-      {
-        titulo: "Zona Polar",
-        descripcion: "En las regiones polares, el aire es extremadamente seco, una característica del dominio de la célula Polar. Este es el punto de descenso principal de la circulación Brewer- Dobson. El aire que ha viajado por la estratosfera pierde su humedad y desciende de nuevo a la troposfera, por lo que no se observa ninguna señal de ascenso, sino un fuerte ciclo anual influenciado por el vórtice polar.",
-        imagen: "assets/modulo-1/zonas-polares-2005-2015.png",
-        anterior: "latitudes-medias",
-        siguiente: null
-      }
-    ]
+    3: {
+      titulo: "Circulación",
+      descripcion: "La Circulación de Brewer-Dobson es un modelo que describe el flujo promedio y a gran escala del fluido atmosférico en la estratosfera. No es un viento que se pueda medir en un solo lugar, sino un lento movimiento residual a escala planetaria. \n Este flujo es el principal mecanismo de transporte de masa y energía entre la estratosfera tropical y la polar, siendo responsable de la distribución global de trazadores clave como el ozono y el vapor de agua.",
+      imagen: "assets/modulo-1/zonas-polares-2005-2015.png",
+      descripcionImagen: "Tomado de: https://4.bp.blogspot.com/_KGhu7uNajfQ/TMGw_HD4mWI/A AAAAAAAARs/W8sJyPEzFDk/s1600/celulas-hadley-2.jpg",
+    },
   },
   horaExplorar: {
     titulo: 'Hora de explorar',
