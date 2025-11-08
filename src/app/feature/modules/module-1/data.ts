@@ -113,7 +113,7 @@ export const MODULO1_DATA = {
         enlace: "https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_all.html?locale=es_PE",
       },
       {
-        titulo: "Baja presión",
+        titulo: "Bajo presión",
         descripcion: "Descubre cómo cambia la presión con la altitud en un fluido.",
         enlace: "https://phet.colorado.edu/sims/html/under-pressure/latest/under-pressure_all.html?locale=es",
       }
