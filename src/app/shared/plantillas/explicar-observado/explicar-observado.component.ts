@@ -4,14 +4,12 @@ import { Subscription } from 'rxjs';
 import { ModuleStateService } from '../../../core/services/module-state.service';
 import { MODULO1_DATA } from '../../../feature/modules/module-1/data';
 
-interface ExplicacionData {
+interface BotonModal {
   titulo: string;
   descripcion: string;
-  tipo: 'grid' | 'lista' | 'tabs' | 'simple';
-  contenido: any;
   imagen?: string;
-  creditos?: string;
-  textoBoton?: string;
+  anterior?: string | null;
+  siguiente?: string | null;
 }
 
 @Component({
@@ -20,16 +18,13 @@ interface ExplicacionData {
   styleUrls: ['./explicar-observado.component.css']
 })
 export class ExplicarObservadoComponent implements OnInit, OnDestroy {
-  data: ExplicacionData | null = null;
   currentModule: string | null = null;
-  layoutType: string = 'simple';
+  sections: any[] = []; // ← Secciones dinámicas (1, 2, 3, ...)
+  activeTabIndex: number = 0;
 
-  titulo: string | undefined;
-  descripcion: string | undefined;
-  celulas: any;
-  imagen?: string;
-  textoBoton?: string;
-  creditos?: string;
+  // Estado de modales
+  modalOpen = false;
+  modalItem: BotonModal | null = null;
 
   private sub: Subscription | null = null;
 
@@ -52,22 +47,60 @@ export class ExplicarObservadoComponent implements OnInit, OnDestroy {
   private loadModuleData() {
     if (this.currentModule === 'modulo-1') {
       const moduleData = MODULO1_DATA.explicarObservado;
-      this.data = {
-        titulo: moduleData.titulo,
-        descripcion: moduleData.descripcion,
-        tipo: 'grid',
-        contenido: moduleData.celulas,
-        imagen: moduleData.imagen,
-        textoBoton: moduleData.textoBoton,
-        creditos: moduleData.creditos
-      };
-      this.layoutType = this.data.tipo;
+      // Convertir las claves (1, 2, 3...) en un arreglo de secciones
+      this.sections = Object.entries(moduleData).map(([key, value]) => ({
+        id: key,
+        ...value
+      }));
     }
   }
 
-  onButtonClick() {
-    if (this.currentModule === 'modulo-1') {
-      this.router.navigate(['/modulo-1/entender-fenomeno']);
-    }
+  /** Tabs */
+  setActiveTab(index: number) {
+    this.activeTabIndex = index;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  isActive(index: number): boolean {
+    return this.activeTabIndex === index;
+  }
+
+  /** Modales */
+  openModal(item: BotonModal) {
+    this.modalItem = item;
+    this.modalOpen = true;
+  }
+
+  closeModal() {
+    this.modalItem = null;
+    this.modalOpen = false;
+  }
+
+  goToNextModal() {
+    if (!this.modalItem?.siguiente) return;
+    const botones = this.getAllModales();
+    const next = botones.find(b => this.slugify(b.titulo) === this.modalItem?.siguiente);
+    if (next) this.modalItem = next;
+  }
+
+  goToPreviousModal() {
+    if (!this.modalItem?.anterior) return;
+    const botones = this.getAllModales();
+    const prev = botones.find(b => this.slugify(b.titulo) === this.modalItem?.anterior);
+    if (prev) this.modalItem = prev;
+  }
+
+  private getAllModales(): BotonModal[] {
+    return this.sections
+      .flatMap(s => s.modales ?? [])
+      .flatMap((m: any) => m.botonesModales ?? []);
+  }
+
+  private slugify(s: string): string {
+    return s
+      .toLowerCase()
+      .trim()
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9\-]/g, '');
   }
 }
