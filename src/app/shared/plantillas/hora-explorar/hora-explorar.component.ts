@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModuleStateService } from '../../../core/services/module-state.service';
 import { Subscription } from 'rxjs';
-import { MODULO1_DATA } from '../../../feature/modules/module-1/data';
+import { MODULO1_DATA } from '../../../feature/modules/module-1/data_modulo_uno.';
 
 interface horaAprenderData {
   titulo: string;
