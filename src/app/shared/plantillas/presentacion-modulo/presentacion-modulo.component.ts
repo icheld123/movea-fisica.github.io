@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ModuleStateService } from '../../../core/services/module-state.service';
 import { Router } from '@angular/router';
-import { MODULO1_DATA } from '../../../feature/modules/module-1/data';
+import { MODULO1_DATA } from '../../../feature/modules/module-1/data_modulo_uno.';
 
 interface presentacionModulo {
     titulo: string,
