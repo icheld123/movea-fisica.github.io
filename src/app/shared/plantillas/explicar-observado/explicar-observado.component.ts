@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ModuleStateService } from '../../../core/services/module-state.service';
-import { MODULO1_DATA } from '../../../feature/modules/module-1/data';
+import { MODULO1_DATA } from '../../../feature/modules/module-1/data_modulo_uno.';
 
 interface BotonModal {
   titulo: string;

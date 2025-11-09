@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { MODULO1_DATA } from './data';
+import { MODULO1_DATA } from './data_modulo_uno.';
 import { ModuleStateService } from '../../../core/services/module-state.service';
 
 @Component({

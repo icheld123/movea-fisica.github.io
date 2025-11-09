@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit, Input, Output, EventEmitter } from '@angu
 import { Subscription } from 'rxjs';
 import { ModuleStateService } from '../../../core/services/module-state.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { MODULO1_DATA } from '../../../feature/modules/module-1/data';
+import { MODULO1_DATA } from '../../../feature/modules/module-1/data_modulo_uno.';
 
 @Component({
   selector: 'app-observar-fenomeno',

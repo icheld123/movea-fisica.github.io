@@ -1,1 +1,11 @@
-<app-en-construccion></app-en-construccion>
+<div class="mx-30 text-center my-10 space-y-3">
+    <h1 class="text-2xl">{{data.titulo}}</h1>
+    <ng-container *ngFor="let parrafo of data.descripcion | keyvalue">
+      <p>{{parrafo.value}}</p><br>
+    </ng-container>
+    <ng-container *ngFor="let item of data.boton ">
+      <button class="group relative inline-flex items-center mt-4 mx-4 px-6 py-3 text-base font-medium text-white bg-[#8392e0] rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform duration-200 hover:-translate-y-0.5">
+        <a [routerLink]="item.ruta">{{ item.titulo }}</a>
+      </button>
+    </ng-container>
+</div>
