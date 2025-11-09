@@ -15,15 +15,13 @@ interface simulaciones {
   enlace?: string;
 }
 
-
-
 @Component({
   selector: 'app-hora-explorar',
   templateUrl: './hora-explorar.component.html',
   styleUrl: './hora-explorar.component.css'
 })
 export class HoraExplorarComponent {
-currentModule: string | null = null;
+  currentModule: string | null = null;
   data: horaAprenderData | null = null;
   simulaciones: simulaciones[] | null = null;
   // modal state
