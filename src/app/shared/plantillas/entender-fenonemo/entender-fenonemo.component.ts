@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { ModuleStateService } from '../../../core/services/module-state.service';
 import { Subscription } from 'rxjs';
 import { MODULO1_DATA } from '../../../feature/modules/module-1/data_modulo_uno.';
+import { MODULO2_DATA } from '../../../feature/modules/module-2/data';
+import { MODULO3_DATA } from '../../../feature/modules/module-3/data';
 
 interface EntenderData {
   titulo: string;
@@ -42,6 +44,9 @@ export class EntenderFenonemoComponent {
   ngOnInit(): void {
     this.sub = this.moduleState.selectedModule$.subscribe(mod => {
       this.currentModule = mod ?? (this.router.url.startsWith('/modulo-1') ? 'modulo-1' : null);
+      this.currentModule = mod ?? (this.router.url.startsWith('/modulo-2') ? 'modulo-2' : null);
+      this.currentModule = mod ?? (this.router.url.startsWith('/modulo-3') ? 'modulo-3' : null);
+
       this.loadModuleData();
     });
   }
@@ -55,9 +60,62 @@ export class EntenderFenonemoComponent {
       this.tabs = Object.values(moduleData);
       this.data = moduleData;
     }
+    if (this.currentModule === 'modulo-2') {
+      const moduleData = MODULO2_DATA.entenderFenomeno;
+      this.tabs = Object.values(moduleData);
+      this.data = moduleData;
+    }
+    /*
+    if (this.currentModule === 'modulo-3') {
+      const moduleData = MODULO3_DATA.entenderFenomeno;
+      this.tabs = Object.values(moduleData);
+      this.data = moduleData;
+    }
+    */
   }
 
   selectTab(index: number) {
     this.activeTab = index;
+  }
+
+  /** Modales */
+  openModal(item: any) {
+    this.modalItem = item;
+    this.modalOpen = true;
+  }
+
+  closeModal() {
+    this.modalItem = null;
+    this.modalOpen = false;
+  }
+
+  goToNextModal() {
+    if (!this.modalItem?.siguiente) return;
+    const botones = this.getAllModales();
+    const next = botones.find(b => this.slugify(b.titulo) === this.modalItem?.siguiente);
+    if (next) this.modalItem = next;
+  }
+
+  goToPreviousModal() {
+    if (!this.modalItem?.anterior) return;
+    const botones = this.getAllModales();
+    const prev = botones.find(b => this.slugify(b.titulo) === this.modalItem?.anterior);
+    if (prev) this.modalItem = prev;
+  }
+
+  private getAllModales(): any[] {
+    return Object.values(this.data)
+      .flatMap((section: any) => section.modales ?? [])
+      .flatMap((m: any) => m.botonesModales ?? []);
+  }
+
+  private slugify(s: string): string {
+    return s
+      .toLowerCase()
+      .trim()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9\-]/g, '');
   }
 }

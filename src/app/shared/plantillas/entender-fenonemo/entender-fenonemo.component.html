@@ -10,44 +10,78 @@
         ? 'bg-[#8392e0] text-white shadow-md' 
         : 'bg-gray-200 text-gray-700 hover:bg-gray-300'"
     >
-      {{ tab.titulo }}
+      {{ tab.modales ? tab.modales[0]?.titulo : tab.titulo }}
     </button>
   </div>
 
   <!-- Contenido activo -->
-  <div *ngIf="data && data[activeTab]" class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+  <div *ngIf="data && data[activeTab]">
     
-    <!-- Descripción y detalles -->
-    <div>
-      <h3 class="text-xl font-semibold text-blue-700 mb-4">
-        {{ data[activeTab].titulo }}
-      </h3>
+    <!-- Caso 1: Sección con modales (como la nueva sección 4) -->
+    <div *ngIf="data[activeTab].modales">
+      <div *ngFor="let modal of data[activeTab].modales" class="text-center mb-6">
+        <h3 class="text-xl font-semibold mb-3">{{ modal.titulo }}</h3>
+        <p class="text-gray-700 mb-6 whitespace-pre-line">{{ modal.descripcion }}</p>
 
-      <p class="text-gray-700 whitespace-pre-line mb-4">
-        {{ data[activeTab].descripcion }}
-      </p>
-
-      <!-- Items opcionales (como en Flujo) -->
-      <div *ngIf="data[activeTab].items" class="space-y-3">
-        <div *ngFor="let item of data[activeTab].items" 
-             class="bg-white rounded-lg shadow p-4 hover:shadow-md transition">
-          <h4 class="font-semibold text-blue-700 mb-1">{{ item.nombre }}</h4>
-          <p class="text-gray-700">{{ item.descripcion }}</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <button
+            *ngFor="let boton of modal.botonesModales"
+            (click)="openModal(boton)"
+            class="px-5 py-2 bg-[#8392e0] text-white rounded-full hover:bg-[#6f7fd0] transition">
+            {{ boton.titulo }}
+          </button>
         </div>
       </div>
     </div>
 
-    <!-- Imagen -->
-    <div class="text-center">
-      <img 
-        [src]="data[activeTab].imagen" 
-        alt="Imagen de {{ data[activeTab].titulo }}"
-        class="mx-auto rounded-lg shadow-lg w-full max-w-md lg:max-w-lg"
-      >
-      <p *ngIf="data[activeTab].descripcionImagen" 
-         class="text-xs text-gray-400 mt-2 break-words">
-        {{ data[activeTab].descripcionImagen }}
-      </p>
+    <!-- Caso 2: Sección con imagen y descripción (como secciones 1, 2, 3) -->
+    <div *ngIf="!data[activeTab].modales" class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+      
+      <!-- Descripción y detalles -->
+      <div>
+        <h3 class="text-xl font-semibold text-blue-700 mb-4">
+          {{ data[activeTab].titulo }}
+        </h3>
+
+        <p class="text-gray-700 whitespace-pre-line mb-4">
+          {{ data[activeTab].descripcion }}
+        </p>
+
+        <!-- Items opcionales (como en Flujo) -->
+        <div *ngIf="data[activeTab].items" class="space-y-3">
+          <div *ngFor="let item of data[activeTab].items" 
+               class="bg-white rounded-lg shadow p-4 hover:shadow-md transition">
+            <h4 class="font-semibold text-blue-700 mb-1">{{ item.nombre }}</h4>
+            <p class="text-gray-700 whitespace-pre-line">{{ item.descripcion }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Imagen -->
+      <div class="text-center" *ngIf="data[activeTab].imagen">
+        <img 
+          [src]="data[activeTab].imagen" 
+          alt="Imagen de {{ data[activeTab].titulo }}"
+          class="mx-auto rounded-lg shadow-lg w-full max-w-md lg:max-w-lg"
+        >
+        <p *ngIf="data[activeTab].descripcionImagen" 
+           class="text-xs text-gray-400 mt-2 break-words">
+          {{ data[activeTab].descripcionImagen }}
+        </p>
+      </div>
     </div>
   </div>
 </div>
+
+<!-- Modal component -->
+<app-modal 
+  [open]="modalOpen" 
+  [title]="modalItem?.titulo" 
+  [content]="modalItem?.descripcion" 
+  [next]="modalItem?.siguiente" 
+  [previous]="modalItem?.anterior" 
+  [imagen]="modalItem?.imagen" 
+  (close)="closeModal()"
+  (onNext)="goToNextModal()"
+  (onPrevious)="goToPreviousModal()"
+></app-modal>

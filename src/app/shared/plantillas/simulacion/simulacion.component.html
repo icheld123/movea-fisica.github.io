@@ -1,7 +1,7 @@
 <div *ngIf="titulo && descripcion" class="flex flex-col items-center min-h-screen text-black">
   <div class="flex items-center justify-center mb-8 gap-4 flex-wrap">
     <h1 class="text-center text-2xl font-bold mb-6">{{ titulo }}</h1><br>
-    <p class="text-center mb-8">{{ descripcion }}</p>
+    <p class="text-center mb-8 whitespace-pre-line">{{ descripcion }}</p>
   </div>
 
   <div *ngIf="safeUrl" class="w-full flex justify-center mb-8">

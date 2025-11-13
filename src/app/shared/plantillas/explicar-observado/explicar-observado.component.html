@@ -21,7 +21,7 @@
       <!-- Caso 1: Sección con título y descripción -->
       <div *ngIf="activeSection.titulo" class="text-center mb-6">
         <h2 class="text-2xl font-bold mb-2">{{ activeSection.titulo }}</h2>
-        <p class="text-gray-700 mb-4">{{ activeSection.descripcion }}</p>
+        <p class="text-gray-700 mb-4 whitespace-pre-line">{{ activeSection.descripcion }}</p>
       </div>
 
       <!-- Caso 1.1: Items (como la sección 1) -->
@@ -43,7 +43,7 @@
           <div *ngFor="let item of activeSection.items" 
               class="bg-white rounded-lg shadow p-4 hover:shadow-md transition">
             <h3 class="font-semibold text-blue-700 mb-2">{{ item.nombre }}</h3>
-            <p class="text-gray-700">{{ item.descripcion }}</p>
+            <p class="text-gray-700 whitespace-pre-line">{{ item.descripcion }}</p>
           </div>
         </div>
 
@@ -53,7 +53,7 @@
       <div *ngIf="activeSection.modales">
         <div *ngFor="let modal of activeSection.modales" class="text-center mb-6">
           <h3 class="text-xl font-semibold mb-3">{{ modal.titulo }}</h3>
-          <p class="text-gray-700 mb-6">{{ modal.descripcion }}</p>
+          <p class="text-gray-700 mb-6 whitespace-pre-line">{{ modal.descripcion }}</p>
 
           <div class="flex flex-wrap justify-center gap-3">
             <button
@@ -69,7 +69,7 @@
       <!-- Caso 3: Transición (como la sección 3) -->
       <div *ngIf="activeSection.transicion" class="text-center">
         <h3 class="text-xl font-semibold mb-3">{{ activeSection.transicion.titulo }}</h3>
-        <p class="text-gray-700 mb-6">{{ activeSection.transicion.descripcion }}</p>
+        <p class="text-gray-700 mb-6 whitespace-pre-line">{{ activeSection.transicion.descripcion }}</p>
 
         <button 
           *ngIf="activeSection.transicion.botones?.ruta" 
