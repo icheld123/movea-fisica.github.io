@@ -4,7 +4,7 @@
     <ng-container *ngIf="data.simulaciones">
       <div class="flex items-center justify-center mb-8 gap-4 flex-wrap">
         <h1 class="text-center text-2xl font-bold mb-6">{{ data.titulo }}</h1>
-        <p class="text-center mb-8">{{ data.descripcion }}</p>
+        <p class="text-center mb-8 whitespace-pre-line">{{ data.descripcion }}</p>
         <ng-container *ngFor="let item of data.simulaciones">
           <button
             (click)="openModal(item)"

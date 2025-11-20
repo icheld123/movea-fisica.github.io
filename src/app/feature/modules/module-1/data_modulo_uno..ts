@@ -102,7 +102,7 @@ export const MODULO1_DATA = {
     3: {
       titulo: "Circulación",
       descripcion: "La Circulación de Brewer-Dobson es un modelo que describe el flujo promedio y a gran escala del fluido atmosférico en la estratosfera. No es un viento que se pueda medir en un solo lugar, sino un lento movimiento residual a escala planetaria. \n Este flujo es el principal mecanismo de transporte de masa y energía entre la estratosfera tropical y la polar, siendo responsable de la distribución global de trazadores clave como el ozono y el vapor de agua.",
-      imagen: "assets/modulo-1/zonas-polares-2005-2015.png",
+      imagen: "assets/modulo-1/celulas-hadley-2.jpg",
       descripcionImagen: "Tomado de: https://4.bp.blogspot.com/_KGhu7uNajfQ/TMGw_HD4mWI/A AAAAAAAARs/W8sJyPEzFDk/s1600/celulas-hadley-2.jpg",
     },
   },
