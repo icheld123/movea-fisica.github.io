@@ -3,6 +3,8 @@ import { Subscription } from 'rxjs';
 import { ModuleStateService } from '../../../core/services/module-state.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MODULO1_DATA } from '../../../feature/modules/module-1/data_modulo_uno.';
+import { MODULO2_DATA } from '../../../feature/modules/module-2/data';
+import { MODULO3_DATA } from '../../../feature/modules/module-3/data';
 
 @Component({
   selector: 'app-observar-fenomeno',
@@ -32,6 +34,9 @@ export class ObservarFenomenoComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.sub = this.moduleState.selectedModule$.subscribe(mod => {
       this.currentModule = mod ?? (this.router.url.startsWith('/modulo-1') ? 'modulo-1' : null);
+      this.currentModule = mod ?? (this.router.url.startsWith('/modulo-2') ? 'modulo-2' : null);
+      this.currentModule = mod ?? (this.router.url.startsWith('/modulo-3') ? 'modulo-3' : null);
+
       if (!this.data) {
         this.loadModuleData();
       } else {
@@ -64,8 +69,15 @@ export class ObservarFenomenoComponent implements OnInit, OnDestroy {
         'background-position': 'center',
         'min-height': '90vh'
       };
+    } else if (this.currentModule === 'modulo-2') {
+        this.backgroundStyle = {
+          'background-image': "url('assets/modulo-2/circulacion_convectiva_global.gif')",
+          'background-size': 'cover',
+          'background-position': 'center',
+          'min-height': '90vh'
+        };
     } else {
-      this.backgroundStyle = {};
+        this.backgroundStyle = {};
     }
   }
 
@@ -80,6 +92,12 @@ export class ObservarFenomenoComponent implements OnInit, OnDestroy {
     if (this.currentModule === 'modulo-1') {
       this.router.navigate(['/modulo-1/explicar-observado']);
     }
+    if (this.currentModule === 'modulo-2') {
+      this.router.navigate(['/modulo-2/explicar-observado']);
+    }
+    if (this.currentModule === 'modulo-3') {
+      this.router.navigate(['/modulo-3/explicar-observado']);
+    }
   }
 
   private loadModuleData() {
@@ -89,6 +107,21 @@ export class ObservarFenomenoComponent implements OnInit, OnDestroy {
       this.descripcion = data.descripcion;
       this.textoBoton = data.textoBoton;
     }
+    if (this.currentModule === 'modulo-2') {
+      const data = MODULO2_DATA.observarFenomeno;
+      this.titulo = data.titulo;
+      this.descripcion = data.descripcion;
+      this.textoBoton = data.textoBoton;
+    }
+    
+    /*
+    if (this.currentModule === 'modulo-3') {
+      const data = MODULO3_DATA.observarFenomeno;
+      this.titulo = data.titulo;
+      this.descripcion = data.descripcion;
+      this.textoBoton = data.textoBoton;
+    }
+    */
   }
 
   private applyData(d: ObservacionData) {

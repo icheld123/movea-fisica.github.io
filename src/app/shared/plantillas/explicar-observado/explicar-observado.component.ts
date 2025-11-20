@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ModuleStateService } from '../../../core/services/module-state.service';
 import { MODULO1_DATA } from '../../../feature/modules/module-1/data_modulo_uno.';
+import { MODULO2_DATA } from '../../../feature/modules/module-2/data';
+import { MODULO3_DATA } from '../../../feature/modules/module-3/data';
 
 interface BotonModal {
   titulo: string;
@@ -36,6 +38,9 @@ export class ExplicarObservadoComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.sub = this.moduleState.selectedModule$.subscribe(mod => {
       this.currentModule = mod ?? (this.router.url.startsWith('/modulo-1') ? 'modulo-1' : null);
+      this.currentModule = mod ?? (this.router.url.startsWith('/modulo-2') ? 'modulo-2' : null);
+      this.currentModule = mod ?? (this.router.url.startsWith('/modulo-3') ? 'modulo-3' : null);
+
       this.loadModuleData();
     });
   }
@@ -53,6 +58,24 @@ export class ExplicarObservadoComponent implements OnInit, OnDestroy {
         ...value
       }));
     }
+    if (this.currentModule === 'modulo-2') {
+      const moduleData = MODULO2_DATA.explicarObservado;
+      // Convertir las claves (1, 2, 3...) en un arreglo de secciones
+      this.sections = Object.entries(moduleData).map(([key, value]) => ({
+        id: key,
+        ...value
+      }));
+    }
+    /*
+    if (this.currentModule === 'modulo-3') {
+      const moduleData = MODULO3_DATA.explicarObservado;
+      // Convertir las claves (1, 2, 3...) en un arreglo de secciones
+      this.sections = Object.entries(moduleData).map(([key, value]) => ({
+        id: key,
+        ...value
+      }));
+    }
+    */
   }
 
   /** Tabs */
@@ -100,6 +123,8 @@ export class ExplicarObservadoComponent implements OnInit, OnDestroy {
     return s
       .toLowerCase()
       .trim()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
       .replace(/\s+/g, '-')
       .replace(/[^a-z0-9\-]/g, '');
   }

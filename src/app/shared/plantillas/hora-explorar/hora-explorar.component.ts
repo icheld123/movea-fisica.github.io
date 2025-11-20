@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { ModuleStateService } from '../../../core/services/module-state.service';
 import { Subscription } from 'rxjs';
 import { MODULO1_DATA } from '../../../feature/modules/module-1/data_modulo_uno.';
+import { MODULO2_DATA } from '../../../feature/modules/module-2/data';
+import { MODULO3_DATA } from '../../../feature/modules/module-3/data';
 
 interface horaAprenderData {
   titulo: string;
@@ -37,6 +39,9 @@ export class HoraExplorarComponent {
   ngOnInit(): void {
     this.sub = this.moduleState.selectedModule$.subscribe(mod => {
       this.currentModule = mod ?? (this.router.url.startsWith('/modulo-1') ? 'modulo-1' : null);
+      this.currentModule = mod ?? (this.router.url.startsWith('/modulo-2') ? 'modulo-2' : null);
+      this.currentModule = mod ?? (this.router.url.startsWith('/modulo-3') ? 'modulo-3' : null);
+
       this.loadModuleData();
     });
   }
@@ -64,5 +69,23 @@ export class HoraExplorarComponent {
         simulaciones: moduleData.simulaciones,
       };
     }
+    if (this.currentModule === 'modulo-2') {
+      const moduleData = MODULO2_DATA.horaExplorar;
+      this.data = {
+        titulo: moduleData.titulo,
+        descripcion: moduleData.descripcion,
+        simulaciones: moduleData.simulaciones,
+      };
+    }
+    /*
+    if (this.currentModule === 'modulo-3') {
+      const moduleData = MODULO3_DATA.horaExplorar;
+      this.data = {
+        titulo: moduleData.titulo,
+        descripcion: moduleData.descripcion,
+        simulaciones: moduleData.simulaciones,
+      };
+    }   
+    */
   }
 }
