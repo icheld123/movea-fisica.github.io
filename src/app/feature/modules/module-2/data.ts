@@ -1,6 +1,6 @@
 export const MODULO2_DATA = {
   presentacion: {
-    titulo: "MÓDULO 2: EL AIRE QUE SE ELEVA – TRANSFERENCIA DE CALOR Y CONVECCIÓN",
+    titulo: "Mòdulo 2: El aire que se eleva – Transferencia de Calor y Convección",
 descripcion: "Detrás de cada corriente de aire hay un motor silencioso: el calor. En este módulo aprenderás cómo la energía solar calienta la superficie de la Tierra, generando movimientos verticales de aire que dan origen a la convección. Este fenómeno no solo transporta calor, sino también vapor de agua e isótopos hacia las capas superiores de la atmósfera. \n\n A partir de simulaciones, imágenes satelitales y la observación de los monsones — grandes sistemas de circulación impulsados por el calor— comprenderás cómo el aire se eleva, cómo se enfría y cómo este ciclo alimenta la dinámica global de la atmósfera. El calor no solo se siente, también se mueve. Descubre cómo da vida al aire que asciende.",
     boton:{
     titulo: "Empezar →",
