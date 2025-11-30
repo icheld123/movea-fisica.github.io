@@ -1,4 +1,4 @@
-<div class="plantilla flex flex-col items-center justify-center text-center p-6" [ngStyle]="backgroundStyle">
+<div class="plantilla flex flex-col items-center justify-center text-center p-6" [ngStyle]="backgroundStyle" *ngIf="!show_aux">
   <div class="max-w-2xl mx-auto p-10 bg-black/10 rounded-lg backdrop-blur-sm">
     <h2 class="text-3xl font-bold mb-4 text-white">{{ titulo }}</h2>
     <p class="text-lg mb-8 text-gray-200">{{ descripcion }}</p>
@@ -13,4 +13,6 @@
     </div>
   </div>
   <ng-content></ng-content>
+</div>
+<div class="aux" *ngIf="show_aux">
 </div>

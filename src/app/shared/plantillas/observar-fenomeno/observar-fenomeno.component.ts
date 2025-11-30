@@ -19,6 +19,7 @@ export class ObservarFenomenoComponent implements OnInit, OnDestroy {
   titulo: string = '';
   descripcion: string = '';
   textoBoton: string = '';
+  show_aux: boolean = false;
 
   currentModule: string | null = null;
   backgroundStyle: { [key: string]: string } = {};
@@ -93,7 +94,7 @@ export class ObservarFenomenoComponent implements OnInit, OnDestroy {
       this.router.navigate(['/modulo-1/explicar-observado']);
     }
     if (this.currentModule === 'modulo-2') {
-      this.router.navigate(['/modulo-2/explicar-observado']);
+      this.show_aux = true;
     }
     if (this.currentModule === 'modulo-3') {
       this.router.navigate(['/modulo-3/explicar-observado']);
