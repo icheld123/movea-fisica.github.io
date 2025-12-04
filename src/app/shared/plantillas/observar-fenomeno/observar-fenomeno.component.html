@@ -15,4 +15,32 @@
   <ng-content></ng-content>
 </div>
 <div class="aux" *ngIf="show_aux">
-</div>
+    <!-- Caso 1: Sección con título centrado -->
+    <div *ngIf="tituloaux" class="text-center mb-6">
+      <h2 class="text-2xl font-bold mb-2">{{tituloaux}}</h2>
+    </div>
+
+    <!-- Caso 1.1: Descripción e imagen lado a lado -->
+    <div *ngIf="imagenaux" 
+        class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8 items-center">
+
+      <!-- Columna de descripción y botón -->
+      <div class="text-gray-700">
+        <p class="whitespace-pre-line mb-6">{{descripcionaux }}</p>
+        <button (click)="nextSectionButton()"
+          class="group inline-flex items-center px-6 py-3 text-base font-medium text-white bg-[#8392e0] border border-transparent rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-transform transform hover:-translate-y-0.5 cursor-pointer">
+          <span class="mr-3">{{ textoBoton }}</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Columna de imagen -->
+      <div class="text-center">
+        <img [src]="imagenaux" 
+            class="mx-auto rounded-lg shadow-lg w-full max-w-md lg:max-w-lg">
+      </div>
+
+    </div>
+  </div>

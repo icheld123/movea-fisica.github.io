@@ -57,17 +57,28 @@
         </div>
       </div>
 
-      <!-- Imagen -->
+      <!-- Imagen y botones (imagen a la izquierda del layout, botones a la derecha en desktop) -->
       <div class="text-center" *ngIf="data[activeTab].imagen">
-        <img 
-          [src]="data[activeTab].imagen" 
-          alt="Imagen de {{ data[activeTab].titulo }}"
-          class="mx-auto rounded-lg shadow-lg w-full max-w-md lg:max-w-lg"
-        >
-        <p *ngIf="data[activeTab].descripcionImagen" 
-           class="text-xs text-gray-400 mt-2 break-words">
-          {{ data[activeTab].descripcionImagen }}
-        </p>
+        <div class="h-full flex flex-col w-full lg:items-stretch lg:justify-between">
+          <div class="flex justify-center">
+            <img 
+              [src]="data[activeTab].imagen" 
+              alt="Imagen de {{ data[activeTab].titulo }}"
+              class="mx-auto rounded-lg shadow-lg w-full max-w-md lg:max-w-lg"
+            >
+          </div>
+          <p *ngIf="data[activeTab].descripcionImagen" 
+             class="text-xs text-gray-400 mt-2 break-words text-center lg:text-left">
+            {{ data[activeTab].descripcionImagen }}
+          </p>
+
+          <!-- Contenedor para botones alineados a la derecha en desktop -->
+          <div class="w-full mt-6">
+            <div class="hidden lg:flex lg:justify-end lg:items-center lg:space-x-6">            </div>
+              <div class="hidden lg:flex lg:justify-end lg:items-center lg:space-x-6"></div>
+              <div class="mt-8 w-full flex justify-center lg:justify-end"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -21,6 +21,11 @@ export class ObservarFenomenoComponent implements OnInit, OnDestroy {
   textoBoton: string = '';
   show_aux: boolean = false;
 
+  tituloaux: string = '';
+  descripcionaux: string = '';
+  imagenaux: string = '';
+  itemsaux: string = '';
+
   currentModule: string | null = null;
   backgroundStyle: { [key: string]: string } = {};
 
@@ -100,7 +105,10 @@ export class ObservarFenomenoComponent implements OnInit, OnDestroy {
       this.router.navigate(['/modulo-3/explicar-observado']);
     }
   }
+nextSectionButton() {
+    this.router.navigate([this.currentModule + '/explicar-observado']);
 
+}
   private loadModuleData() {
     if (this.currentModule === 'modulo-1') {
       const data = MODULO1_DATA.observarFenomeno;
@@ -113,6 +121,9 @@ export class ObservarFenomenoComponent implements OnInit, OnDestroy {
       this.titulo = data.titulo;
       this.descripcion = data.descripcion;
       this.textoBoton = data.textoBoton;
+      this.tituloaux = data.tituloaux;
+      this.descripcionaux = data.descripcionaux;
+      this.imagenaux = data.imagenaux;
     }
     
     /*

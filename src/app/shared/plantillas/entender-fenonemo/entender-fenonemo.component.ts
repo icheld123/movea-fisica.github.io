@@ -72,6 +72,14 @@ export class EntenderFenonemoComponent {
       this.data = moduleData;
     }
     */
+
+    
+  }
+
+  onButtonClick() {
+     this.router.navigate([this.currentModule + '']);
+
+    
   }
 
   selectTab(index: number) {
@@ -109,6 +117,7 @@ export class EntenderFenonemoComponent {
       .flatMap((m: any) => m.botonesModales ?? []);
   }
 
+
   private slugify(s: string): string {
     return s
       .toLowerCase()
@@ -117,5 +126,16 @@ export class EntenderFenonemoComponent {
       .replace(/[\u0300-\u036f]/g, '')
       .replace(/\s+/g, '-')
       .replace(/[^a-z0-9\-]/g, '');
+  }
+
+  // Busca un modal por su título (ignorando acentos/mayúsculas)
+  findModalByTitle(title: string): any | null {
+    if (!title) return null;
+    const botones = this.getAllModales();
+    const target = botones.find((b: any) => {
+      if (!b?.titulo) return false;
+      return this.slugify(b.titulo) === this.slugify(title);
+    });
+    return target ?? null;
   }
 }
