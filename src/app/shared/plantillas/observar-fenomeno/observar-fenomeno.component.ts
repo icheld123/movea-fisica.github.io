@@ -25,6 +25,7 @@ export class ObservarFenomenoComponent implements OnInit, OnDestroy {
   descripcionaux: string = '';
   imagenaux: string = '';
   itemsaux: string = '';
+  textoBotonAux: string = '';
 
   currentModule: string | null = null;
   backgroundStyle: { [key: string]: string } = {};
@@ -131,6 +132,7 @@ nextSectionButton() {
       this.tituloaux = data.tituloaux;
       this.descripcionaux = data.descripcionaux;
       this.imagenaux = data.imagenaux;
+      this.textoBotonAux = data.textoBotonAux;
     }
     
     /*
