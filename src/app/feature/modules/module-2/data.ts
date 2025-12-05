@@ -1,6 +1,6 @@
 export const MODULO2_DATA = {
   presentacion: {
-    titulo: "Mòdulo 2: El aire que se eleva – Transferencia de Calor y Convección",
+    titulo: "Módulo 2: El aire que se eleva – Transferencia de Calor y Convección",
     descripcion: "Detrás de cada corriente de aire hay un motor silencioso: el calor. En este módulo aprenderás cómo la energía solar calienta la superficie de la Tierra, generando movimientos verticales de aire que dan origen a la convección. Este fenómeno no solo transporta calor, sino también vapor de agua e isótopos hacia las capas superiores de la atmósfera. \n\n A partir de simulaciones, imágenes satelitales y la observación de los monsones — grandes sistemas de circulación impulsados por el calor— comprenderás cómo el aire se eleva, cómo se enfría y cómo este ciclo alimenta la dinámica global de la atmósfera. El calor no solo se siente, también se mueve. Descubre cómo da vida al aire que asciende.",
     boton:{
     titulo: "Empezar →",
@@ -82,7 +82,7 @@ export const MODULO2_DATA = {
       modales: [
         {
           titulo: 'Los monzones ',
-          descripcion: 'Un monzón es el ejemplo más espectacular de convección estacional a gran escala. No es solo lluvia; es un "interruptor" en la circulación atmosférica.Durante el verano, la tierra se calienta mucho más rápido que el océano. Este diferencial extremo de temperatura crea una zona de baja presión sobre el continente, que literalmente "aspira" el aire increíblemente húmedo del océano. Este aire asciende masivamente, se enfría y genera lluvias torrenciales.',
+          descripcion: 'Un monzón es el ejemplo más espectacular de convección estacional a gran escala. No es solo lluvia; es un "interruptor" en la circulación atmosférica. Durante el verano, la tierra se calienta mucho más rápido que el océano. Este diferencial extremo de temperatura crea una zona de baja presión sobre el continente, que literalmente "aspira" el aire increíblemente húmedo del océano. Este aire asciende masivamente, se enfría y genera lluvias torrenciales.',
           botonesModales: [
             {
               titulo: "Norteamerica",
@@ -101,14 +101,7 @@ export const MODULO2_DATA = {
           ]
         }
       ]
-    },
-      modales: [
-        {
-          titulo: 'Evidencias',
-          descripcion: "Ahora, veamos los datos reales. Estos GIFs (generados con datos de MLS a ~17 km) muestran los 'puntos calientes' de vapor de agua durante las temporadas de monzón.\n\nSon la prueba de que la convección profunda está transportando activamente la humedad a la alta atmósfera",
-
-        },
-      ],
+    }
   },
   horaExplorar: {
     titulo: '¡Hora de explorar!',

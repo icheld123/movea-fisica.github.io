@@ -1,9 +1,9 @@
 <div *ngIf="open" class="fixed inset-0 z-[9999] flex items-center justify-center">
 	<div class="absolute inset-0 bg-black/50" (click)="onClose()" aria-hidden="true"></div>
 
-	<div class="relative bg-white rounded-lg shadow-xl max-w-4xl w-full mx-4 p-6 z-10">
+	<div class="relative bg-white rounded-lg shadow-xl max-w-7xl w-full mx-4 p-6 z-10">
         <div class="flex justify-between items-start">
-            <h3 class="text-xl font-semibold text-gray-900">{{ title }}</h3>
+            <h3 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold leading-snug">{{ title }}</h3>
             <button (click)="onClose()" class="text-gray-500 hover:text-gray-700">
                 <span class="sr-only">Cerrar</span>
                 ✕
@@ -11,7 +11,7 @@
         </div>
         <div class="grid md:grid-cols-2 gap-8 mb-8">
             <div class="mt-4 mb-4 text-gray-700 prose max-w-none">
-                <div [innerHTML]="content"></div>
+                <div [innerHTML]="content" class="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed md:leading-9 lg:leading-12"></div>
             </div>
             <div>
             <img *ngIf="imagen && !video" [src]="imagen" alt="Imagen de {{ title }}" class="w-full rounded-lg shadow-lg">
@@ -27,18 +27,21 @@
             <div class="flex items-center justify-center mb-8 gap-4 flex-wrap">
                 <button *ngIf="previous"
                     (click)="goPrevious()"
-                    class="mx-4 group relative inline-flex items-center px-6 py-3 text-base font-medium text-white bg-[#8392e0] rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform duration-200 hover:-translate-y-0.5">
+                    class="
+                    px-5 py-2 bg-[#8392e0] text-xl text-white rounded-full hover:bg-[#6f7fd0] cursor-pointer
+                     relative inline-flex items-center mt-4 px-6 py-3 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform duration-200 hover:-translate-y-0.5">
                     <span class="mr-2 transform rotate-180">→</span>
                     Anterior
                 </button>
                 <button *ngIf="next"
                     (click)="goNext()"
-                    class="mx-4 group relative inline-flex items-center px-6 py-3 text-base font-medium text-white bg-[#8392e0] rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform duration-200 hover:-translate-y-0.5">
+                    class="px-5 py-2 bg-[#8392e0] text-xl text-white rounded-full hover:bg-[#6f7fd0] cursor-pointer
+                     relative inline-flex items-center mt-4 px-6 py-3 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform duration-200 hover:-translate-y-0.5">
                     Siguiente
                     <span class="ml-2">→</span>
                 </button>
                 <button (click)="onClose()" 
-                    class="mx-4 group relative inline-flex items-center px-6 py-3 text-base font-medium text-white bg-gray-400 hover:bg-gray-500 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform duration-200 hover:-translate-y-0.5">
+                    class="px-5 py-2 text-xl text-white cursor-pointer inline-flex items-center px-6 py-3 text-base font-medium text-white bg-gray-400 hover:bg-gray-500 mt-4 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform duration-200 hover:-translate-y-0.5">
                     Cerrar
                 </button>
             </div>
