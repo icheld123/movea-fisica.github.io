@@ -11,10 +11,10 @@ export const MODULO2_DATA = {
     titulo: "MÓDULO 2: EL AIRE QUE SE ELEVA – TRANSFERENCIA DE CALOR Y CONVECCIÓN",
     descripcion: "El calor impulsa los grandes movimientos del aire. Descubramos cómo la energía solar genera el ascenso del vapor de agua que alimenta la atmósfera.",
     textoBoton: "Descubrir cómo",
-      tituloaux: "Todo comienza con el sol",
-      descripcionaux: "La superficie de la Tierra absorbe la radiación solar y se calienta. Este calor se transfiere al aire que está en contacto directo con ella. \n\n Al calentarse, el aire se expande, su densidad disminuye y, por ser más ligero que el aire circundante, asciende. Este movimiento vertical de ascenso de aire caliente es el motor fundamental de la convección.",
-      imagenaux: "assets/modulo-2/M2_celda_convectiva.gif",
-
+    tituloaux: "Todo comienza con el sol",
+    descripcionaux: "La superficie de la Tierra absorbe la radiación solar y se calienta. Este calor se transfiere al aire que está en contacto directo con ella. \n\n Al calentarse, el aire se expande, su densidad disminuye y, por ser más ligero que el aire circundante, asciende. Este movimiento vertical de ascenso de aire caliente es el motor fundamental de la convección.",
+    imagenaux: "assets/modulo-2/M2_celda_convectiva.gif",
+    textoBotonAux: "Entendámoslo",
   },
   explicarObservado: {
     1:  {
