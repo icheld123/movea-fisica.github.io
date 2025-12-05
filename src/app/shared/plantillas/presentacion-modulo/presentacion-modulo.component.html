@@ -1,6 +1,6 @@
-<div class="text-center mx-30 my-10 space-y-6">
-  <h2 class="text-2xl">{{ data?.titulo }}</h2>
-  <p class="whitespace-pre-line">{{ data?.descripcion }}</p>
+<div class="text-center lg:mx-30 my-10 space-y-6">
+  <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold leading-snug">{{ data?.titulo }}</h1>
+  <p class="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed md:leading-9 lg:leading-12">{{ data?.descripcion }}</p>
 
   <ng-container *ngFor="let item of data?.boton">
     <button class="group relative inline-flex items-center mt-4 px-6 py-3 text-base font-medium text-white bg-[#8392e0] rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform duration-200 hover:-translate-y-0.5">

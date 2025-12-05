@@ -1,11 +1,25 @@
-<div class="mx-30 text-center my-10 space-y-3">
-    <h1 class="text-2xl">{{data.titulo}}</h1>
-    <ng-container *ngFor="let parrafo of data.descripcion | keyvalue">
-      <p>{{parrafo.value}}</p><br>
-    </ng-container>
-    <ng-container *ngFor="let item of data.boton ">
-      <button class="group relative inline-flex items-center mt-4 mx-4 px-6 py-3 text-base font-medium text-white bg-[#8392e0] rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform duration-200 hover:-translate-y-0.5">
+<div class="mx-auto px-4 my-10 text-center space-y-6 max-w-7xl">
+  <!-- TÍTULO RESPONSIVO -->
+  <h1 
+    class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold leading-snug">
+    {{ data.titulo }}
+  </h1>
+
+  <!-- PÁRRAFOS RESPONSIVOS -->
+  <ng-container *ngFor="let parrafo of data.descripcion | keyvalue">
+    <p 
+      class="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed md:leading-9 lg:leading-12">
+      {{ parrafo.value }}
+    </p>
+  </ng-container>
+
+  <!-- BOTONES -->
+  <div class="flex flex-wrap justify-center gap-4 mt-6">
+    <ng-container *ngFor="let item of data.boton">
+      <button 
+        class="group relative inline-flex items-center px-6 py-3 text-sm sm:text-base md:text-lg font-medium text-white bg-[#8392e0] rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform duration-200 hover:-translate-y-0.5">
         <a [routerLink]="item.ruta">{{ item.titulo }}</a>
       </button>
     </ng-container>
+  </div>
 </div>

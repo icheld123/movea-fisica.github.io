@@ -37,9 +37,14 @@ export class ExplicarObservadoComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.sub = this.moduleState.selectedModule$.subscribe(mod => {
-      this.currentModule = mod ?? (this.router.url.startsWith('/modulo-1') ? 'modulo-1' : null);
-      this.currentModule = mod ?? (this.router.url.startsWith('/modulo-2') ? 'modulo-2' : null);
-      this.currentModule = mod ?? (this.router.url.startsWith('/modulo-3') ? 'modulo-3' : null);
+      const inferModule = () => {
+        if (this.router.url.startsWith('/modulo-1')) return 'modulo-1';
+        if (this.router.url.startsWith('/modulo-2')) return 'modulo-2';
+        if (this.router.url.startsWith('/modulo-3')) return 'modulo-3';
+        return null;
+      };
+
+      this.currentModule = mod ?? inferModule();
 
       this.loadModuleData();
     });

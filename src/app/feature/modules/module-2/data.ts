@@ -1,7 +1,7 @@
 export const MODULO2_DATA = {
   presentacion: {
-    titulo: "Mòdulo 2: El aire que se eleva – Transferencia de Calor y Convección",
-descripcion: "Detrás de cada corriente de aire hay un motor silencioso: el calor. En este módulo aprenderás cómo la energía solar calienta la superficie de la Tierra, generando movimientos verticales de aire que dan origen a la convección. Este fenómeno no solo transporta calor, sino también vapor de agua e isótopos hacia las capas superiores de la atmósfera. \n\n A partir de simulaciones, imágenes satelitales y la observación de los monsones — grandes sistemas de circulación impulsados por el calor— comprenderás cómo el aire se eleva, cómo se enfría y cómo este ciclo alimenta la dinámica global de la atmósfera. El calor no solo se siente, también se mueve. Descubre cómo da vida al aire que asciende.",
+    titulo: "Módulo 2: El aire que se eleva – Transferencia de Calor y Convección",
+    descripcion: "Detrás de cada corriente de aire hay un motor silencioso: el calor. En este módulo aprenderás cómo la energía solar calienta la superficie de la Tierra, generando movimientos verticales de aire que dan origen a la convección. Este fenómeno no solo transporta calor, sino también vapor de agua e isótopos hacia las capas superiores de la atmósfera. \n\n A partir de simulaciones, imágenes satelitales y la observación de los monsones — grandes sistemas de circulación impulsados por el calor— comprenderás cómo el aire se eleva, cómo se enfría y cómo este ciclo alimenta la dinámica global de la atmósfera. El calor no solo se siente, también se mueve. Descubre cómo da vida al aire que asciende.",
     boton:{
     titulo: "Empezar →",
     ruta: "/modulo-2/observar-fenomeno"
@@ -11,18 +11,13 @@ descripcion: "Detrás de cada corriente de aire hay un motor silencioso: el calo
     titulo: "MÓDULO 2: EL AIRE QUE SE ELEVA – TRANSFERENCIA DE CALOR Y CONVECCIÓN",
     descripcion: "El calor impulsa los grandes movimientos del aire. Descubramos cómo la energía solar genera el ascenso del vapor de agua que alimenta la atmósfera.",
     textoBoton: "Descubrir cómo",
+      tituloaux: "Todo comienza con el sol",
+      descripcionaux: "La superficie de la Tierra absorbe la radiación solar y se calienta. Este calor se transfiere al aire que está en contacto directo con ella. \n\n Al calentarse, el aire se expande, su densidad disminuye y, por ser más ligero que el aire circundante, asciende. Este movimiento vertical de ascenso de aire caliente es el motor fundamental de la convección.",
+      imagenaux: "assets/modulo-2/M2_celda_convectiva.gif",
+
   },
   explicarObservado: {
-    1: {
-      titulo: "Todo comienza con el sol",
-      items: [
-        {
-          descripcion: "La superficie de la Tierra absorbe la radiación solar y se calienta. Este calor se transfiere al aire que está en contacto directo con ella. \n\n Al calentarse, el aire se expande, su densidad disminuye y, por ser más ligero que el aire circundante, asciende. Este movimiento vertical de ascenso de aire caliente es el motor fundamental de la convección."
-        },
-      ],
-      imagen: "assets/modulo-2/M2_celda_convectiva.gif",
-    },
-    2: {
+    1:  {
       modales: [
         {
           titulo: '¿Cómo se transporta el calor?',
@@ -53,7 +48,7 @@ descripcion: "Detrás de cada corriente de aire hay un motor silencioso: el calo
         },
       ],
     },
-    3: {
+    2: {
       transicion: {
       titulo: "De los tres, ¿Cúal es el que mueve el aire?",
       descripcion: "Los tres procesos ocurren al mismo tiempo, pero tienen roles diferentes para el movimiento del aire:\n\nLa Conducción: Es importante, pero solo calienta la finísima capa de aire que está en contacto directo con el suelo.\nLa Radiación: Calienta la superficie y algunas partes de la atmósfera, pero es la convección el único mecanismo que \nfísicamente transporta ese aire caliente y húmedo desde la superficie hacia lo alto de la atmósfera.\n\nPor lo tanto, para entender cómo asciende el vapor de agua...\n...la CONVECCIÓN es el proceso clave que debemos estudiar.",
@@ -84,31 +79,29 @@ descripcion: "Detrás de cada corriente de aire hay un motor silencioso: el calo
           descripcion: "Un flujo suave y ordenado donde las partículas del fluido se mueven en capas paralelas sin mezclarse entre sí."
         },
       ],
-    },
-    4: {
       modales: [
         {
-          titulo: 'Evidencias',
-          descripcion: "Ahora, veamos los datos reales. Estos GIFs (generados con datos de MLS a ~17 km) muestran los 'puntos calientes' de vapor de agua durante las temporadas de monzón.\n\nSon la prueba de que la convección profunda está transportando activamente la humedad a la alta atmósfera",
+          titulo: 'Los monzones ',
+          descripcion: 'Un monzón es el ejemplo más espectacular de convección estacional a gran escala. No es solo lluvia; es un "interruptor" en la circulación atmosférica. Durante el verano, la tierra se calienta mucho más rápido que el océano. Este diferencial extremo de temperatura crea una zona de baja presión sobre el continente, que literalmente "aspira" el aire increíblemente húmedo del océano. Este aire asciende masivamente, se enfría y genera lluvias torrenciales.',
           botonesModales: [
             {
               titulo: "Norteamerica",
               descripcion: "Observa la 'mancha' de humedad que se forma sobre México y el suroeste de EE. UU. en verano. Es el resultado directo de la convección monzónica.",
-              imagen: "assets/modulo-2/M2_norteamerica.gif",
+              video: "https://www.youtube.com/embed/UyEt_HAti2A",
               anterior: null,
               siguiente: "asia"
             },
             {
               titulo: "Asia",
               descripcion: "El monzón más potente del mundo. Mira la inmensa piscina de vapor de agua sobre India e Indonesia, bombeada directamente a la tropopausa.",
-              imagen: "assets/modulo-2/M2_asia.gif",
+              video: "https://drive.google.com/file/d/1TmDQpYVjwnPokP5zG7SbgDdQQfcb8bFY/preview",
               anterior: "norteamerica",
               siguiente: null
-            },
+            }
           ]
-        },
-      ],
-    },
+        }
+      ]
+    }
   },
   horaExplorar: {
     titulo: '¡Hora de explorar!',

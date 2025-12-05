@@ -19,6 +19,12 @@ export class ObservarFenomenoComponent implements OnInit, OnDestroy {
   titulo: string = '';
   descripcion: string = '';
   textoBoton: string = '';
+  show_aux: boolean = false;
+
+  tituloaux: string = '';
+  descripcionaux: string = '';
+  imagenaux: string = '';
+  itemsaux: string = '';
 
   currentModule: string | null = null;
   backgroundStyle: { [key: string]: string } = {};
@@ -33,9 +39,14 @@ export class ObservarFenomenoComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.sub = this.moduleState.selectedModule$.subscribe(mod => {
-      this.currentModule = mod ?? (this.router.url.startsWith('/modulo-1') ? 'modulo-1' : null);
-      this.currentModule = mod ?? (this.router.url.startsWith('/modulo-2') ? 'modulo-2' : null);
-      this.currentModule = mod ?? (this.router.url.startsWith('/modulo-3') ? 'modulo-3' : null);
+      const inferModule = () => {
+        if (this.router.url.startsWith('/modulo-1')) return 'modulo-1';
+        if (this.router.url.startsWith('/modulo-2')) return 'modulo-2';
+        if (this.router.url.startsWith('/modulo-3')) return 'modulo-3';
+        return null;
+      };
+
+      this.currentModule = mod ?? inferModule();
 
       if (!this.data) {
         this.loadModuleData();
@@ -93,13 +104,18 @@ export class ObservarFenomenoComponent implements OnInit, OnDestroy {
       this.router.navigate(['/modulo-1/explicar-observado']);
     }
     if (this.currentModule === 'modulo-2') {
-      this.router.navigate(['/modulo-2/explicar-observado']);
+      this.show_aux = true;
     }
     if (this.currentModule === 'modulo-3') {
       this.router.navigate(['/modulo-3/explicar-observado']);
     }
   }
+nextSectionButton() {
+  // navigate with absolute path to ensure correct routing on reload
+  const target = this.currentModule ? '/' + this.currentModule + '/explicar-observado' : '/explicar-observado';
+  this.router.navigate([target]);
 
+}
   private loadModuleData() {
     if (this.currentModule === 'modulo-1') {
       const data = MODULO1_DATA.observarFenomeno;
@@ -112,6 +128,9 @@ export class ObservarFenomenoComponent implements OnInit, OnDestroy {
       this.titulo = data.titulo;
       this.descripcion = data.descripcion;
       this.textoBoton = data.textoBoton;
+      this.tituloaux = data.tituloaux;
+      this.descripcionaux = data.descripcionaux;
+      this.imagenaux = data.imagenaux;
     }
     
     /*
