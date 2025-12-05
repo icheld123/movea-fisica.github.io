@@ -5,7 +5,7 @@
     <button 
       *ngFor="let tab of tabs; let i = index"
       (click)="selectTab(i + 1)"
-      class="px-5 py-2 rounded-full text-sm font-medium transition-all duration-200"
+      class="px-5 py-2 rounded-full text-xl cursor-pointer font-medium transition-all duration-200"
       [ngClass]="activeTab === i + 1 
         ? 'bg-[#8392e0] text-white shadow-md' 
         : 'bg-gray-200 text-gray-700 hover:bg-gray-300'"
@@ -20,14 +20,14 @@
     <!-- Caso 1: Sección con modales (como la nueva sección 4) -->
     <div *ngIf="data[activeTab].modales">
       <div *ngFor="let modal of data[activeTab].modales" class="text-center mb-6">
-        <h3 class="text-xl font-semibold mb-3">{{ modal.titulo }}</h3>
-        <p class="text-gray-700 mb-6 whitespace-pre-line">{{ modal.descripcion }}</p>
+        <h3 class="sm:text-3xl md:text-4xl lg:text-3xl font-bold leading-snug">{{ modal.titulo }}</h3>
+        <p class="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed md:leading-9 lg:leading-12">{{ modal.descripcion }}</p>
 
         <div class="flex flex-wrap justify-center gap-3">
           <button
             *ngFor="let boton of modal.botonesModales"
             (click)="openModal(boton)"
-            class="px-5 py-2 bg-[#8392e0] text-white rounded-full hover:bg-[#6f7fd0] transition">
+            class="mt-8 px-5 py-2 bg-[#8392e0] lg:text-xl md:text-xl text-white rounded-full hover:bg-[#6f7fd0] transition cursor-pointer">
             {{ boton.titulo }}
           </button>
         </div>
@@ -39,11 +39,11 @@
       
       <!-- Descripción y detalles -->
       <div>
-        <h3 class="text-xl font-semibold text-blue-700 mb-4">
+        <h3 class="sm:text-3xl md:text-4xl lg:text-3xl font-bold leading-snug">
           {{ data[activeTab].titulo }}
         </h3>
 
-        <p class="text-gray-700 whitespace-pre-line mb-4">
+        <p class="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed md:leading-9 lg:leading-12">
           {{ data[activeTab].descripcion }}
         </p>
 
@@ -51,23 +51,34 @@
         <div *ngIf="data[activeTab].items" class="space-y-3">
           <div *ngFor="let item of data[activeTab].items" 
                class="bg-white rounded-lg shadow p-4 hover:shadow-md transition">
-            <h4 class="font-semibold text-blue-700 mb-1">{{ item.nombre }}</h4>
-            <p class="text-gray-700 whitespace-pre-line">{{ item.descripcion }}</p>
+            <h4 class="text-lg font-semibold text-blue-700 mb-1">{{ item.nombre }}</h4>
+            <p  class="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed md:leading-9 lg:leading-12">{{ item.descripcion }}</p>
           </div>
         </div>
       </div>
 
-      <!-- Imagen -->
+      <!-- Imagen y botones (imagen a la izquierda del layout, botones a la derecha en desktop) -->
       <div class="text-center" *ngIf="data[activeTab].imagen">
-        <img 
-          [src]="data[activeTab].imagen" 
-          alt="Imagen de {{ data[activeTab].titulo }}"
-          class="mx-auto rounded-lg shadow-lg w-full max-w-md lg:max-w-lg"
-        >
-        <p *ngIf="data[activeTab].descripcionImagen" 
-           class="text-xs text-gray-400 mt-2 break-words">
-          {{ data[activeTab].descripcionImagen }}
-        </p>
+        <div class="h-full flex flex-col w-full lg:items-stretch lg:justify-between">
+          <div class="flex justify-center">
+            <img 
+              [src]="data[activeTab].imagen" 
+              alt="Imagen de {{ data[activeTab].titulo }}"
+              class="mx-auto rounded-lg shadow-lg w-full max-w-md lg:max-w-xl"
+            >
+          </div>
+          <p *ngIf="data[activeTab].descripcionImagen" 
+             class="text-xs text-gray-400 mt-2 break-words text-center lg:text-left">
+            {{ data[activeTab].descripcionImagen }}
+          </p>
+
+          <!-- Contenedor para botones alineados a la derecha en desktop -->
+          <div class="w-full mt-6">
+            <div class="hidden lg:flex lg:justify-end lg:items-center lg:space-x-6">            </div>
+              <div class="hidden lg:flex lg:justify-end lg:items-center lg:space-x-6"></div>
+              <div class="mt-8 w-full flex justify-center lg:justify-end"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -77,6 +88,7 @@
 <app-modal 
   [open]="modalOpen" 
   [title]="modalItem?.titulo" 
+  [video]="modalItem?.video"
   [content]="modalItem?.descripcion" 
   [next]="modalItem?.siguiente" 
   [previous]="modalItem?.anterior" 

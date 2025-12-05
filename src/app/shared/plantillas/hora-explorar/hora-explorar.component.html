@@ -3,12 +3,12 @@
   <div *ngIf="!modalOpen && data" class="w-full p-8">
     <ng-container *ngIf="data.simulaciones">
       <div class="flex items-center justify-center mb-8 gap-4 flex-wrap">
-        <h1 class="text-center text-2xl font-bold mb-6">{{ data.titulo }}</h1>
-        <p class="text-center mb-8 whitespace-pre-line">{{ data.descripcion }}</p>
+        <h1 class="sm:text-3xl md:text-4xl lg:text-3xl font-bold leading-snug">{{ data.titulo }}</h1>
+        <p class="text-center sm:text-lg md:text-xl lg:text-2xl leading-relaxed md:leading-9 lg:leading-12">{{ data.descripcion }}</p>
         <ng-container *ngFor="let item of data.simulaciones">
           <button
             (click)="openModal(item)"
-            class="group relative inline-flex items-center px-6 py-3 text-base font-medium text-white bg-[#8392e0] rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform duration-200 hover:-translate-y-0.5">
+            class="mt-8 px-5 py-2 bg-[#8392e0] lg:text-xl md:text-xl text-white rounded-full hover:bg-[#6f7fd0] transition cursor-pointer">
             {{ item.titulo }}
             <span class="ml-2 transform group-hover:translate-x-1 transition-transform duration-200">→</span>
           </button>
