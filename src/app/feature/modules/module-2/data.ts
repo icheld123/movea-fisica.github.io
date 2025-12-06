@@ -68,7 +68,7 @@ export const MODULO2_DATA = {
     2: {
       titulo: "Convección Profunda",
       descripcion: "En los trópicos, la energía solar es tan intensa que las corrientes ascendentes pueden 'perforar' toda la troposfera hasta alcanzar la tropopausa (la 'tapa' de la atmósfera, ~17 km).\n\n A esto se le llama Convección Profunda.",
-      imagen: "assets/modulo-2/ConveccionProfunda.png",
+      imagen: "assets/modulo-2/M2_conveccion.gif",
       },
     3: {
       titulo: "Los Monzones",
