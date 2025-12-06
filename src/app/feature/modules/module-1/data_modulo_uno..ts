@@ -3,8 +3,8 @@ export const MODULO1_DATA = {
     titulo: "Módulo 1: “El gran río del cielo”",
     descripcion: "El aire que respiramos no está quieto. Desde los trópicos hasta los polos, la atmósfera fluye como un inmenso río que transporta energía, vapor de agua y trazadores invisibles. En este módulo conocerás cómo se mueve ese fluido y descubrirás el papel de la circulación Brewer–Dobson, un proceso clave que impulsa el ascenso del aire en los trópicos y su descenso en latitudes medias. A través de visualizaciones globales y experimentos interactivos, observarás cómo el aire cálido asciende, cómo el frío desciende y cómo este movimiento constante mantiene en equilibrio la atmósfera. Prepárate para mirar al cielo como un océano en movimiento, donde cada corriente cuenta una historia del clima.",
     boton:{
-    titulo: "Empezar →",
-    ruta: "/modulo-1/observar-fenomeno"
+      titulo: "Empezar →",
+      ruta: "/modulo-1/observar-fenomeno"
     }
   },
   observarFenomeno: {

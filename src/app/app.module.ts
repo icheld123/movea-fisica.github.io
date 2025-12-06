@@ -11,6 +11,7 @@ import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { InicioComponent } from './feature/home/inicio/inicio.component';
 import { SharedModule } from './shared/shared.module';
 import { SidebarComponent } from './core/components/sidebar/sidebar.component';
+import { FooterComponent } from './core/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SidebarComponent } from './core/components/sidebar/sidebar.component';
     NavbarComponent,
     InicioComponent,
     SidebarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
